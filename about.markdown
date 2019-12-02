@@ -11,7 +11,7 @@ I study gene regulation (in Vavilov Institute of General Genetics) using bioinfo
 Here are some tools, I've developed at work.
 
 Databases:
-[HOCOMOCO](http://hocomoco.autosome.ru) - collection of transcription factor binding sites models. *Developed web-interface and backend. Performed a substatial part of data analysis.*
+[HOCOMOCO](http://hocomoco.autosome.ru) - collection of transcription factor binding sites models. *Developed web-interface and backend. Performed substatial part of data analysis.*
 [Epifactors](http://epifactors.autosome.ru) - collection of epigenetic factors, corresponding genes and products. *Developed web-interface and backend.*
 
 Web services:
