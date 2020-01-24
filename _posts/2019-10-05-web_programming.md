@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Веб-программирование
+title: Веб-программирование (программа курса)
 permalink: /web_programming/
 ---
 ## Аннотация
