@@ -53,3 +53,7 @@ Career:
 * 2012 - now: Vavilov institute of General Genetics. Department of computational systems biology, research fellow
 
 Here is my [CV in Russian](/static/VorontsovIE-CV-ru-informal.pdf).
+
+Other stuff:
+* My [articles](https://habr.com/ru/users/vorontsovie/posts/) for habrahabr.
+* My telegram-channel about [open science](https://t.me/OpenScienceRu).
