@@ -9,12 +9,13 @@ Hi, I am Ilya Vorontsov (Илья Воронцов), researcher and developer fr
 I study gene regulation in [Vavilov Institute of General Genetics](http://vigg.ru/) using bioinformatician data analysis (since 2012). 
 
 My [Google scholar profile](https://scholar.google.ru/citations?user=hRn71foAAAAJ).
+
 My repositories: [github](https://github.com/VorontsovIE/), [bitbucket](https://bitbucket.org/VorontsovIE/), [our lab github](https://github.com/autosome-ru/).
 
 Here are some toolkits and services, I've developed at work.
 
 Databases:
-* [HOCOMOCO](http://hocomoco.autosome.ru) - collection of transcription factor binding sites models. *Developed web-interface and backend. Performed substatial part of data analysis.*
+* [HOCOMOCO](http://hocomoco.autosome.ru) - collection of transcription factor binding sites models. *Developed web-interface and backend. Performed substantial part of data analysis.*
 * [Epifactors](http://epifactors.autosome.ru) - collection of epigenetic factors, corresponding genes and products. *Developed web-interface and backend.*
 
 Web services:
