@@ -92,3 +92,8 @@ Here is my [CV in Russian](/static/VorontsovIE-CV-ru-informal.pdf).
 Other stuff:
 * My [articles](https://habr.com/ru/users/vorontsovie/posts/) for habrahabr.
 * My telegram-channel about [open science](https://t.me/OpenScienceRu).
+
+Contacts:
+* telegram: <a href="https://t.me/VorontsovIE">@VorontsovIE</a>
+* e-mail: <a href="mailto:vorontsov.i.e@gmail.com">vorontsov.i.e@gmail.com</a>
+* phone: +7(926)616-0892
