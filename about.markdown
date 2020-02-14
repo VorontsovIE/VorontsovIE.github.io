@@ -42,8 +42,8 @@ My [Google scholar profile](https://scholar.google.ru/citations?user=hRn71foAAAA
   <li>(2013) <span class="title">HOCOMOCO: a comprehensive collection of human transcription factor binding sites models.</span> <span class="authors">I.V. Kulakovskiy, Y.A. Medvedeva, U. Schaefer, A.S. Kasianov, I.E. Vorontsov, V.B. Bajic, V.J. Makeev.</span><br/><span class="publisher">Nucleic Acids Research, 41(D1): D195-D202, <a href="http://nar.oxfordjournals.org/content/41/D1/D195.full">doi:10.1093/nar/gks1089</a></span></li>
   </ol>
 </details>
-
-My repositories: [github](https://github.com/VorontsovIE/), [bitbucket](https://bitbucket.org/VorontsovIE/), [our lab github](https://github.com/autosome-ru/).
+<br/>
+My repositories: [**github**](https://github.com/VorontsovIE/), [bitbucket](https://bitbucket.org/VorontsovIE/), [lab's github](https://github.com/autosome-ru/).
 
 Here are some toolkits and services, I've developed at work.
 
