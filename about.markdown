@@ -15,7 +15,6 @@ My [Google scholar profile](https://scholar.google.ru/citations?user=hRn71foAAAA
     .title{ font-weight: bolder; }
     .publisher{  }
   </style>
-
   <summary>Selected articles</summary>
   <ol>
   <li>(2019) <span class="title">What do neighbors tell about you: the local context of cis-regulatory modules complicates prediction of regulatory variants.</span> <span class="authors">Dmitry D Penzar, Arsenii O Zinkevich, Ilya E Vorontsov, Vasily V Sitnik, Alexander V Favorov, Vsevolod J Makeev, Ivan V Kulakovskiy.</span><br/><span class="publisher">Frontiers in genetics, 31 October 2019. <a href="https://www.frontiersin.org/articles/10.3389/fgene.2019.01078/full">doi:10.3389/fgene.2019.01078</a></span></li>
@@ -75,7 +74,7 @@ Teaching activities:
 Technologies:
 * Languages I speak: Russian (native), English (good enough to speak and write).
 * Languages I write: Ruby (expert), Python (advanced), Cython(intermediate), Java (intermediate), C++ (intermediate), Javascript (intermediate), bash (advanced).
-* Other experience: Data analysis and visualization, Machine Learning, full-stack web-development (most experience with Ruby on Rails), docker, git, scraping, Linked Data with RDF and SPARQL, LaTeX.
+* Other experience: Data analysis and visualization, Machine Learning, full-stack web-development (most experience with Ruby on Rails), docker, git, scraping, basic SQL, Linked Data with RDF and SPARQL, LaTeX.
 
 Education:
 Graduated Moscow Institute of Physics and Technology:
