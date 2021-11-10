@@ -61,7 +61,9 @@ Toolkits:
 * [pasio](https://github.com/autosome-ru/pasio) - python/cython tool to perform segmentation/denoise of coverage profile into regions of constant Poisson parameter λ (given prior distribution λ ~ Γ(α,β)). *Tool originally developed by Andrey Lando, my part was in performance optimization and packaging.*
 
 Some of my side projects:
-* [Study of working hours](https://habr.com/ru/post/359342/) in different countries based on sci-hub logs (only in Russian yet).
+* [Analysis of draft dynamics](https://sysblok.ru/history/neizvestnyj-soldat/) in USSR during World War II (in Russian).
+* [Analysis of sci-hub](https://habr.com/ru/post/359342/) daily activity patterns in different countries (in Russian).
+* [Automatic Identification of the Repressed Families](https://ru.openlist.wiki/Шаблон:Предположительные_родственники) and further integration of collected data into wiki-based project "Open List".
 * [Interactive historical atlas](http://geo-history.org) based on parsing wikipedia, created by school students under my (and my colleague) supervision.
 
 Teaching activities:
