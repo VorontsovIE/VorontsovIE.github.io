@@ -88,7 +88,7 @@ Career:
 * 2012: development of marketplace for designers
 * 2012 - now: Vavilov institute of General Genetics. Department of computational systems biology, research fellow
 
-Here is my [CV in Russian](/static/VorontsovIE-CV-ru-informal.pdf).
+Here is my [CV](/static/Ilya_Vorontsov_CV.pdf).
 
 Other stuff:
 * My [articles](https://habr.com/ru/users/vorontsovie/posts/) for habrahabr.
