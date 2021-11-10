@@ -21,7 +21,7 @@
 title: Ilya Vorontsov / Илья Воронцов
 email: vorontsov.i.e@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Тексты про программирование и жизнь
+  Medium-rare texts
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: VorontsovIE

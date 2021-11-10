@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ilya Vorontsov
+title: About me
 permalink: /about/
 ---
 
