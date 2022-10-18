@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<style>
+			#main {
+				margin: auto;
+				width: 70%;
+				display: inline-block;
+				box-sizing: border-box;
+			}
+			#results-container {
+				width: 25%;
+				display: inline-block;
+				box-sizing: border-box;
+				vertical-align: top;
+				padding-top: 10vh;
+			}
+
+			#main-img {
+				margin: auto;
+				height: 70vh;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position-x: center;
+			}
+			#main-img.img-help {
+				background-image: url('help.jpg');
+			}
+			#main-img.img-left {
+				background-image: url('stimulus_left.jpg');
+			}
+			#main-img.img-right {
+				background-image: url('stimulus_right.jpg');
+			}
+			#main-img.img-masked {
+				background-image: url('stimulus_masked.jpg');
+			}
+			#controls {
+				margin: auto;
+				text-align: center;
+			}
+			#question {
+				/*margin: auto;*/
+				/*width: fit-content;*/
+			}
+			.hidden {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="main">
+			<div id="main-img" class="img-help"></div>
+			<div id="controls">
+				<p id="question">Какая ножка длиннее?</p>
+				<div id="controls-stage-preexp">
+					<button id="btn-start">Поехали!</button>
+				</div>
+				<div id="controls-stage-exp" class="hidden">
+					<button id="btn-left">Левая</button>
+					<button id="btn-right">Правая</button>
+				</div>
+				<div id="controls-stage-info" class="hidden">
+					<p>Попытка: <span id="num-attempts"></span></p>
+					<p>Число правильных ответов: <span id="correct-answers"></span></p>
+					<p><span id="delay-interval"></span></p>
+				</div>
+				<div id="controls-stage-final" class="hidden">
+					<p>На этом закончим. Спасибо за прохождение эксперимента!</p>
+				</div>
+			</div>
+		</div>
+		<div id="results-container">
+			<table id="results"><thead>
+				<tr><th>Раунд</th><th>Интервал, мс.</th><th>Правильных ответов</th><th>Попыток</th></tr>
+			</thead><tbody></tbody></table>
+		</div>
+		
+
+		<script type="text/javascript">
+			let delay_intervals_seq = [1000, 500, 300, 200, 175, 150, 125, 100, 75, 50, 25];
+			const delay_between_attempts = 500;
+			const num_attempts = 10;
+			const max_errors = 3;
+			let round = 1;
+
+			let container = document.getElementById("main-img");
+			let btn_l = document.getElementById("btn-left");
+			let btn_r = document.getElementById("btn-right");
+			let btn_start = document.getElementById("btn-start");
+			let delay_interval;
+			let attempt;
+			let correct_answers;
+
+			let hide = function() {
+				console.log('hide')
+				container.className = 'img-masked';
+				btn_l.disabled = false;
+				btn_r.disabled = false;
+			}
+			
+			let show = function(side) {
+				console.log('show(' + side + ')')
+				container.className = 'img-' + side;
+				btn_l.disabled = true;
+				btn_r.disabled = true;
+			}
+
+			let side;
+			let make_attempt = function(delay_interval) {
+				update_info();
+				console.log('make_attempt');
+				side = (Math.random() > 0.5) ? 'left' : 'right';
+				console.log('side = ' + side + ' (make_attempt)');
+				show(side);
+				setTimeout(hide, delay_interval);
+			}
+			let update_info = function() {
+				if (attempt < num_attempts) {
+					document.getElementById('num-attempts').innerText = `${attempt + 1} из ${num_attempts}`;
+					document.getElementById('correct-answers').innerText = correct_answers;
+				} else {
+					document.getElementById('num-attempts').innerText = `Этап ${round} закончен`;
+					document.getElementById('correct-answers').innerText = `${correct_answers} из ${num_attempts}`;
+				}
+				document.getElementById('delay-interval').innerText = `Раунд ${round}. Интервал: ${delay_interval} мс.`;
+			}
+
+			let check_correctness = (correct_side) => () => {
+				console.log('check_correctness(' + correct_side + ')');
+				correct_answers += (side == correct_side)  ? 1 : 0;
+				update_info();
+				side = null;
+				console.log('side = null (check_correctness)');
+				attempt += 1;
+				if (attempt < num_attempts) {
+					setTimeout(() => make_attempt(delay_interval), delay_between_attempts);
+				} else {
+					btn_l.disabled = true;
+					btn_r.disabled = true;
+					update_info();
+					let tbl_body = document.getElementById('results').getElementsByTagName('tbody')[0]
+					tbl_body.innerHTML += `<tr><td>${round}</td><td>${delay_interval}</td><td>${correct_answers}</td><td>${num_attempts}</td></tr>`;
+					if ((delay_intervals_seq.length > 0) && (num_attempts - correct_answers <= max_errors)) {
+						delay_interval = delay_intervals_seq.shift();
+						attempt = 0;
+						correct_answers = 0;
+						round += 1;
+						document.getElementById('controls-stage-preexp').className = '';
+						document.getElementById('controls-stage-exp').className = 'hidden';
+						document.getElementById('controls-stage-info').className = '';
+					} else {
+						document.getElementById('controls-stage-exp').className = 'hidden';
+						document.getElementById('controls-stage-final').className = '';
+					}
+				}
+			}
+
+			btn_start.addEventListener('click', ()=>{
+				document.getElementById('controls-stage-preexp').className = 'hidden';
+				document.getElementById('controls-stage-exp').className = '';
+				document.getElementById('controls-stage-info').className = '';
+				make_attempt(delay_interval);
+			});
+			btn_l.addEventListener('click', check_correctness('left'));
+			btn_r.addEventListener('click', check_correctness('right'));
+
+			
+			delay_interval = delay_intervals_seq.shift();
+			attempt = 0;
+			correct_answers = 0;
+			
+			update_info();
+			
+		</script>
+	</body>
+</html>
