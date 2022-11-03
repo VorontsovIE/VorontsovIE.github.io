@@ -37,6 +37,10 @@
 				margin: auto;
 				text-align: center;
 			}
+			#controls-stage-preexp-2 {
+				font-size: 2em;
+				color: red;
+			}
 			#question {
 				/*margin: auto;*/
 				/*width: fit-content;*/
@@ -67,6 +71,8 @@
 					<button id="btn-left">Левая</button>
 					<button id="btn-right">Правая</button>
 				</div>
+				<div id="controls-stage-preexp-2" class="hidden">
+				</div>
 				<div id="controls-stage-info" class="hidden">
 					<p>Попытка: <span id="num-attempts"></span></p>
 					<p>Число правильных ответов: <span id="correct-answers"></span></p>
@@ -85,10 +91,10 @@
 
 
 		<script type="text/javascript">
-			let delay_intervals_seq = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
+			let delay_intervals_seq = [500,  150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
 			const delay_between_attempts = 500;
 			const num_attempts = 10;
-			const max_errors = 3;
+			const max_errors = 2;
 			let round = 1;
 
 			let container = document.getElementById("main-img");
@@ -97,6 +103,7 @@
 			let btn_start = document.getElementById("btn-start");
 			let delay_interval;
 			let attempt;
+			let is_correct;
 			let correct_answers;
 			let side;
 
@@ -131,12 +138,20 @@
 					document.getElementById('num-attempts').innerText = `Этап ${round} закончен`;
 					document.getElementById('correct-answers').innerText = `${correct_answers} из ${num_attempts}`;
 				}
+				if (is_correct === true) {
+					document.getElementById('controls-stage-preexp-2').innerText = 'Верно!';
+				} else if (is_correct === false) {
+					document.getElementById('controls-stage-preexp-2').innerText = 'Неверно';
+				} else {
+					document.getElementById('controls-stage-preexp-2').innerText = '';
+				}
 				document.getElementById('delay-interval').innerText = `Раунд ${round}. Интервал: ${delay_interval} мс.`;
 			}
 
 			let check_correctness = (correct_side) => () => {
 				console.log('check_correctness(' + correct_side + ')');
-				correct_answers += (side == correct_side)  ? 1 : 0;
+				is_correct = (side == correct_side);
+				correct_answers += is_correct  ? 1 : 0;
 				update_info();
 				side = null;
 				console.log('side = null (check_correctness)');
@@ -147,7 +162,8 @@
 					btn_l.disabled = true;
 					btn_r.disabled = true;
 					update_info();
-					let tbl_body = document.getElementById('results').getElementsByTagName('tbody')[0]
+					let tbl_body = document.getElementById('results').getElementsByTagName('tbody')[0];
+					console.log(round);
 					tbl_body.innerHTML += `<tr><td>${delay_interval}</td><td>${correct_answers}</td></tr>`;
 					if ((delay_intervals_seq.length > 0) && (num_attempts - correct_answers <= max_errors)) {
 						delay_interval = delay_intervals_seq.shift();
@@ -167,9 +183,10 @@
 
 			btn_start.addEventListener('click', ()=>{
 				document.getElementById('controls-stage-preexp').className = 'hidden';
+				document.getElementById('controls-stage-preexp-2').className = (round == 1) ? '' : 'hidden';
 				document.getElementById('controls-stage-exp').className = '';
 				// document.getElementById('controls-stage-info').className = '';
-				make_attempt(delay_interval);
+				setTimeout(() => make_attempt(delay_interval), delay_between_attempts);
 			});
 			btn_l.addEventListener('click', check_correctness('left'));
 			btn_r.addEventListener('click', check_correctness('right'));
