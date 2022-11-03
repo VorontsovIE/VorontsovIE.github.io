@@ -72,6 +72,7 @@
 					<button id="btn-right">Правая</button>
 				</div>
 				<div id="controls-stage-preexp-2" class="hidden">
+					Пробный раунд
 				</div>
 				<div id="controls-stage-info" class="hidden">
 					<p>Попытка: <span id="num-attempts"></span></p>
@@ -94,6 +95,7 @@
 			let delay_intervals_seq = [500,  150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
 			const delay_between_attempts = 500;
 			const num_attempts = 10;
+			const num_attempts_first_round = 4;
 			const max_errors = 2;
 			let round = 1;
 
@@ -143,7 +145,7 @@
 				} else if (is_correct === false) {
 					document.getElementById('controls-stage-preexp-2').innerText = 'Неверно';
 				} else {
-					document.getElementById('controls-stage-preexp-2').innerText = '';
+					// document.getElementById('controls-stage-preexp-2').innerText = '';
 				}
 				document.getElementById('delay-interval').innerText = `Раунд ${round}. Интервал: ${delay_interval} мс.`;
 			}
@@ -156,7 +158,7 @@
 				side = null;
 				console.log('side = null (check_correctness)');
 				attempt += 1;
-				if (attempt < num_attempts) {
+				if (attempt < ((round == 1) ? num_attempts_first_round : num_attempts)) {
 					setTimeout(() => make_attempt(delay_interval), delay_between_attempts);
 				} else {
 					btn_l.disabled = true;
@@ -165,7 +167,7 @@
 					let tbl_body = document.getElementById('results').getElementsByTagName('tbody')[0];
 					console.log(round);
 					tbl_body.innerHTML += `<tr><td>${delay_interval}</td><td>${correct_answers}</td></tr>`;
-					if ((delay_intervals_seq.length > 0) && (num_attempts - correct_answers <= max_errors)) {
+					if ((round == 1) || ((delay_intervals_seq.length > 0) && (num_attempts - correct_answers <= max_errors))) {
 						delay_interval = delay_intervals_seq.shift();
 						attempt = 0;
 						correct_answers = 0;
