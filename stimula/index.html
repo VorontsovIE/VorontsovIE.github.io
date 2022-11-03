@@ -9,7 +9,6 @@
 			}
 			#results-container {
 				width: 25%;
-				display: inline-block;
 				box-sizing: border-box;
 				vertical-align: top;
 				padding-top: 10vh;
@@ -50,6 +49,9 @@
 			.hidden {
 				display: none;
 			}
+			.inline-block {
+				display: inline-block;
+			}
 		</style>
 	</head>
 	<body>
@@ -75,15 +77,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="results-container">
+		<div id="results-container" class="hidden">
 			<table id="results"><thead>
-				<tr><th>Раунд</th><th>Интервал, мс.</th><th>Правильных ответов</th><th>Попыток</th></tr>
+				<tr><th>Интервал, мс.</th><th>Правильных ответов</th></tr>
 			</thead><tbody></tbody></table>
 		</div>
-		
+
 
 		<script type="text/javascript">
-			let delay_intervals_seq = [1000, 500, 300, 200, 175, 150, 125, 100, 75, 50, 25];
+			let delay_intervals_seq = [150, 140, 130, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
 			const delay_between_attempts = 500;
 			const num_attempts = 10;
 			const max_errors = 3;
@@ -96,6 +98,7 @@
 			let delay_interval;
 			let attempt;
 			let correct_answers;
+			let side;
 
 			let hide = function() {
 				console.log('hide')
@@ -111,7 +114,6 @@
 				btn_r.disabled = true;
 			}
 
-			let side;
 			let make_attempt = function(delay_interval) {
 				update_info();
 				console.log('make_attempt');
@@ -120,6 +122,7 @@
 				show(side);
 				setTimeout(hide, delay_interval);
 			}
+
 			let update_info = function() {
 				if (attempt < num_attempts) {
 					document.getElementById('num-attempts').innerText = `${attempt + 1} из ${num_attempts}`;
@@ -145,7 +148,7 @@
 					btn_r.disabled = true;
 					update_info();
 					let tbl_body = document.getElementById('results').getElementsByTagName('tbody')[0]
-					tbl_body.innerHTML += `<tr><td>${round}</td><td>${delay_interval}</td><td>${correct_answers}</td><td>${num_attempts}</td></tr>`;
+					tbl_body.innerHTML += `<tr><td>${delay_interval}</td><td>${correct_answers}</td></tr>`;
 					if ((delay_intervals_seq.length > 0) && (num_attempts - correct_answers <= max_errors)) {
 						delay_interval = delay_intervals_seq.shift();
 						attempt = 0;
@@ -153,10 +156,11 @@
 						round += 1;
 						document.getElementById('controls-stage-preexp').className = '';
 						document.getElementById('controls-stage-exp').className = 'hidden';
-						document.getElementById('controls-stage-info').className = '';
+						// document.getElementById('controls-stage-info').className = '';
 					} else {
 						document.getElementById('controls-stage-exp').className = 'hidden';
 						document.getElementById('controls-stage-final').className = '';
+						document.getElementById('results-container').className = 'inline-block';
 					}
 				}
 			}
@@ -164,7 +168,7 @@
 			btn_start.addEventListener('click', ()=>{
 				document.getElementById('controls-stage-preexp').className = 'hidden';
 				document.getElementById('controls-stage-exp').className = '';
-				document.getElementById('controls-stage-info').className = '';
+				// document.getElementById('controls-stage-info').className = '';
 				make_attempt(delay_interval);
 			});
 			btn_l.addEventListener('click', check_correctness('left'));
@@ -176,7 +180,6 @@
 			correct_answers = 0;
 			
 			update_info();
-			
 		</script>
 	</body>
 </html>
