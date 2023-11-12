@@ -63,4 +63,3 @@ webpack:
     - node_modules
   only_in:
     - _site
-    - _build
