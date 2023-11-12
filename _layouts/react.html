@@ -10,11 +10,14 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div id="react-root"></div>
-        {{ content }}
       </div>
     </main>
 
     {%- include footer.html -%}
+    {% comment %}
+      content block should include react script invocation
+    {% endcomment %}
+    {{ content }}
   </body>
 
 </html>
