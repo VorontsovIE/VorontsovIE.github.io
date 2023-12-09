@@ -25,6 +25,10 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "d3": "^7.8.5",
+    "mathjax": "^3.2.2",
+    "mathjax-full": "^3.2.2",
+    "mathjax-react": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
