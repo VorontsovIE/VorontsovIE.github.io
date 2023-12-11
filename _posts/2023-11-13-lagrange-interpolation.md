@@ -2,7 +2,8 @@
 layout: react
 title: Интерполяционный многочлен Лагранжа
 permalink: /lagrange-interpolation/
-mathjax: true
+mathjax: false
+<!-- No need for static mathjax dependency: it's turned on in webpack -->
 ---
 
-<script src="/dist/lagrange_interpolation.js"></script>
+<script src="/dist/lagrange-interpolation.js"></script>
