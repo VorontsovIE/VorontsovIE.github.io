@@ -1,11 +1,17 @@
-import React, { StrictMode, useState, useRef } from "react";
+import React, { StrictMode, Fragment, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
-import styles from './lagrange_interpolation.css';
-
-import {scaleLinear, line, curveMonotoneX} from "d3";
-// import {useRef, useEffect} from "react";
-import { MathComponent } from "mathjax-react";
 import { v4 as uuidv4 } from 'uuid';
+import { MathComponent } from "mathjax-react";
+import {OperatorNode, SymbolNode, ConstantNode} from 'mathjs';
+import {scaleLinear, line, curveMonotoneX} from "d3";
+import styles from './lagrange_interpolation.css';
+import {HorizontalAxis, VerticalAxis} from './d3-axis.js';
+
+// import {useRef, useEffect} from "react";
+// import {Expression, Fraction} from 'algebra.js';
+
+// import {create, all} from 'mathjs';
+// window.mathjs = create(all);
 
 function Point({x, y, r=4}) {
   return <circle cx={x} cy={y} r={r} />
@@ -17,51 +23,106 @@ function Curve({path}) {
   );
 }
 
+let scaleX = scaleLinear().range([0, 800]).domain([-10, 10]);
+let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
+let scalePoint = (point) => ({...point, x: scaleX(point.x), y: scaleY(point.y)});
+
 function pathLine(f) {
-  let scaleX = scaleLinear().range([0, 800]).domain([0, 13]);
-  let scaleY = scaleLinear().range([500, 0]).domain([-1, 1]);
   let points = scaleX.ticks(100).map(x => [x, f(x)]).map(([x,y]) => [scaleX(x), scaleY(y)]);
   let pathGenerator = line().curve(curveMonotoneX);
   return pathGenerator(points);
 }
 
-function SvgSample() {
-  const [points, setPoints] = useState([]);
+function PointTable({points, setPointState}) {
+  const rows = points.map((point, idx) => (
+    <tr key={point.id}>
+      <th>{idx + 1}</th>
+      <th>{point.x}</th>
+      <th>{point.y}</th>
+      <th><input type="checkbox" checked={point.enabled} onClick={(event) => setPointState(point.id, event.target.checked)} /></th>
+    </tr>
+  ));
+  return (
+    <table>
+      <thead>
+        <tr><th>#</th><th>x</th><th>y</th><th>on/off</th></tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+}
 
+function SvgSample({plotFunction, points, updatePoints}) {
   const svgRef = useRef(null);
   const svgLeft = () => svgRef.current.getBoundingClientRect().left + window.scrollX;
   const svgTop  = () => svgRef.current.getBoundingClientRect().top  + window.scrollY;
 
-  let addPoint = function (event) {
-    const coordX = Math.round(event.pageX - svgLeft());
-    const coordY = Math.round(event.pageY - svgTop());
-    setPoints([
+  const addPoint = function (event) {
+
+
+    const canvasX = event.pageX - svgLeft();
+    const canvasY = event.pageY - svgTop();
+    const x = Number((scaleX.invert(canvasX)).toFixed(1));
+    const y = Number((scaleY.invert(canvasY)).toFixed(1));
+    const id = uuidv4();
+    const newPoints = [
       ...points,
-      {
-        x: coordX,
-        y: coordY,
-        id: uuidv4(),
-      }
-    ]);
+      {x, y, id, enabled: true}
+    ];
+    updatePoints(newPoints);
+
+    // // The cursor point, translated into svg coordinates
+    // var pt = new DOMPoint(event.clientX, event.clientY);
+    // var cursorpt = pt.matrixTransform(svgRef.current.getScreenCTM().inverse());
+    // console.log("(" + cursorpt.x + ", " + cursorpt.y + ")");
   }
+
+
+  const pointElements = points.filter(point => point.enabled).map(point => (
+    <Fragment key={point.id}>
+      <Point {...scalePoint(point)} /> 
+      <line x1={scaleX(point.x)} y1={scaleY(point.y)} x2={scaleX(point.x)} y2={scaleY(0)} stroke={"red"} stroke-dasharray={4} />
+    </Fragment>
+  ));
 
   return (
     <svg ref={svgRef} className={styles.svgCanvas} onClick={event => addPoint(event)}>
-      <Curve path={pathLine(x=>Math.sin(x))} />
-      {points.map( point => <Point key={point.id} {...point} /> )}
+      <HorizontalAxis scaleX={scaleX} scaleY={scaleY}  ticks={scaleX.ticks(10).filter(x => x != 0)} />
+      <VerticalAxis scaleX={scaleX} scaleY={scaleY} />
+      <Curve path={pathLine(plotFunction)} />
+      {pointElements}
     </svg>
   );
 }
 
-function LagrangeInterpolationPage(){
-  let [formula, setFormula] = useState(String.raw`6.02 \cdot 10^{23}`);
-  let changeFormula = () => setFormula(String.raw`x^2+2x+1=0`);
+const pow = (a,b) => new OperatorNode('^', 'pow', [a,b]);
+const square = (a) => pow(a, new ConstantNode(2));
+const add = (a,b) => new OperatorNode('+', 'add', [a,b]);
+const mul = (a,b) => new OperatorNode('*', 'multiply', [a,b]);
+const subtract = (a,b) => new OperatorNode('-', 'subtract', [a,b]);
+const sum = (vals) => vals.reduce((res, cur) => add(res,cur));
+const prod = (vals) => vals.reduce((res, cur) => mul(res,cur));
+
+const polyByZeros = (x, zeros) => prod(zeros.map(z => subtract(x, new ConstantNode(z))))
+
+function LagrangeInterpolationPage() {
+  const [points, setPoints] = useState([]);
+  const [formula, setFormula] = useState( new ConstantNode(1) ); //String.raw`6.02 \cdot 10^{23}`);
+  const updatePoints = (newPoints) => {
+    setPoints(newPoints);
+    setFormula( polyByZeros(new SymbolNode('x'), newPoints.map(point => point.x)) );
+  }
+  const setPointState = function(id, state) {
+    updatePoints(points.map(point => (point.id != id) ? point : {...point, enabled: state}));
+  }
+
   return (
     <>
     <h1>Интерполяционный многочлен Лагранжа</h1>
-    <h2 onClick={changeFormula}>Полиномиальная интерполяция</h2>
-    <SvgSample />
-    <p>Formula is <MathComponent display={false} tex={formula} /></p>
+    <h2>Полиномиальная интерполяция</h2>
+    <SvgSample plotFunction={x => formula.evaluate({x: x})} points={points} updatePoints={updatePoints} />
+    <p>Formula is <MathComponent display={false} tex={formula.toTex()} /></p>
+    <PointTable points={points} setPointState={setPointState} />
     </>
   );
 }
