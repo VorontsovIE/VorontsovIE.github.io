@@ -36,16 +36,15 @@ function pathLine(f) {
 function PointTable({points, setPointState}) {
   const rows = points.map((point, idx) => (
     <tr key={point.id}>
-      <th>{idx + 1}</th>
-      <th>{point.x}</th>
-      <th>{point.y}</th>
-      <th><input type="checkbox" checked={point.enabled} onChange={(event) => setPointState(point.id, event.target.checked)} /></th>
+      <th><input type="checkbox" checked={point.enabled} onChange={(event) => setPointState(point.id, {enabled: event.target.checked})} /></th>
+      <th><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => setPointState(point.id, {x: Number(event.target.value)})} /></th>
+      <th><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => setPointState(point.id, {y: Number(event.target.value)})} /></th>
     </tr>
   ));
   return (
-    <table>
+    <table className={styles.pointTable}>
       <thead>
-        <tr><th>#</th><th>x</th><th>y</th><th>on/off</th></tr>
+        <tr><th>#</th><th>x</th><th>y</th></tr>
       </thead>
       <tbody>{rows}</tbody>
     </table>
@@ -53,25 +52,40 @@ function PointTable({points, setPointState}) {
 }
 
 function SvgSample({plotFunction, points, updatePoints}) {
+  const [verticalLineCoord, setVerticalLineCoord] = useState(null);
   const svgRef = useRef(null);
   const svgLeft = () => svgRef.current.getBoundingClientRect().left + window.scrollX;
   const svgTop  = () => svgRef.current.getBoundingClientRect().top  + window.scrollY;
 
+  // The cursor point, translated into svg coordinates
+  const svgCoordinateOfEvent = function (event) {
+    const pt = new DOMPoint(event.clientX, event.clientY);
+    return pt.matrixTransform(svgRef.current.getScreenCTM().inverse());
+  };
   const addPoint = function (event) {
-    // The cursor point, translated into svg coordinates
-    var pt = new DOMPoint(event.clientX, event.clientY);
-    var cursorpt = pt.matrixTransform(svgRef.current.getScreenCTM().inverse());
-    const canvasX = cursorpt.x;
-    const canvasY = cursorpt.y;
+    const cursorPoint = svgCoordinateOfEvent(event);
 
-    const x = Number((scaleX.invert(canvasX)).toFixed(1));
-    const y = Number((scaleY.invert(canvasY)).toFixed(1));
+    const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
+    const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
     const id = uuidv4();
     const newPoints = [
       ...points,
       {x, y, id, enabled: true}
     ];
     updatePoints(newPoints);
+  }
+
+  const moveVertical = function (event) {
+    const cursorPoint = svgCoordinateOfEvent(event);
+    setVerticalLineCoord(scaleX.invert(cursorPoint.x).toFixed(1));
+    // const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
+    // const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
+    // const id = uuidv4();
+    // const newPoints = [
+    //   ...points,
+    //   {x, y, id, enabled: true}
+    // ];
+    // updatePoints(newPoints);
   }
 
 
@@ -84,11 +98,12 @@ function SvgSample({plotFunction, points, updatePoints}) {
   ));
 
   return (
-    <svg ref={svgRef} viewBox="0 0 1000 500" className={styles.svgCanvas} onClick={event => addPoint(event)}>
+    <svg ref={svgRef} viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" className={styles.svgCanvas} onClick={(event) => addPoint(event)} onPointerMove={(event) => moveVertical(event)} >
       <HorizontalAxis scaleX={scaleX} scaleY={scaleY}  ticks={scaleX.ticks(10).filter(x => x != 0)} />
       <VerticalAxis scaleX={scaleX} scaleY={scaleY} />
       <Curve path={pathLine(plotFunction)} />
       {pointElements}
+      <line x1={scaleX(verticalLineCoord)} y1={scaleY.range()[0]} x2={scaleX(verticalLineCoord)} y2={scaleY.range()[1]} stroke={"red"} stroke-dasharray="4 8" />
     </svg>
   );
 }
@@ -111,16 +126,18 @@ function LagrangeInterpolationPage() {
     setFormula( polyByZeros(new SymbolNode('x'), newPoints.filter(point => point.enabled).map(point => point.x)) );
   }
   const setPointState = function(id, state) {
-    updatePoints(points.map(point => (point.id != id) ? point : {...point, enabled: state}));
+    updatePoints(points.map(point => (point.id != id) ? point : {...point, ...state}));
   }
 
   return (
     <>
     <h1>Интерполяционный многочлен Лагранжа</h1>
     <h2>Полиномиальная интерполяция</h2>
-    <SvgSample plotFunction={x => formula.evaluate({x: x})} points={points} updatePoints={updatePoints} />
+    <div className={styles.configurablePlot}>
+      <SvgSample plotFunction={x => formula.evaluate({x: x})} points={points} updatePoints={updatePoints} />
+      <PointTable points={points} setPointState={setPointState} />
+    </div>
     <p>Formula is <MathComponent display={false} tex={formula.toTex()} /></p>
-    <PointTable points={points} setPointState={setPointState} />
     </>
   );
 }

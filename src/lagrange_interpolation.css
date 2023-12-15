@@ -1,5 +1,21 @@
 .svgCanvas {
-  border: 2px solid gold;
-/*  width: 800px;
-  height: 500px; */
+    border: 2px solid gold;
+    flex-grow: 3;
+    flex-basis: 0;
+    margin: 0 10px;
+}
+
+.pointTable {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0 10px;
+}
+
+.configurablePlot {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.numberInput {
+    width: 50px;
 }
