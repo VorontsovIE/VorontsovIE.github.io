@@ -3,17 +3,33 @@
     flex-grow: 3;
     flex-basis: 0;
     margin: 0 10px;
+    min-width: 500px;
 }
 
 .pointTable {
     flex-grow: 1;
     flex-basis: 0;
     margin: 0 10px;
+    max-width: 300px
+}
+
+@media(max-width: 480px) {
+    .svgCanvas {
+        width: 100%;
+    }
+    .pointTable {
+        width: 100%;
+    }
+}
+
+
+.pointTable th, .pointTable td {
+    padding: 5px 5px;
 }
 
 .configurablePlot {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 
 .numberInput {
