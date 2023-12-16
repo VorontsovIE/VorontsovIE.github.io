@@ -1,27 +1,16 @@
 import React, { StrictMode, Fragment, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
-import { v4 as uuidv4 } from 'uuid';
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { nanoid } from '@reduxjs/toolkit'
 import { MathComponent } from "mathjax-react";
-import {OperatorNode, SymbolNode, ConstantNode} from 'mathjs';
 import {scaleLinear, line, curveMonotoneX} from "d3";
 import styles from './lagrange_interpolation.css';
-import {HorizontalAxis, VerticalAxis} from './d3-axis.js';
-
-// import {useRef, useEffect} from "react";
-// import {Expression, Fraction} from 'algebra.js';
-
-// import {create, all} from 'mathjs';
-// window.mathjs = create(all);
-
-function Point({x, y, r=4, fill="black", stroke="black"}) {
-  return <circle cx={x} cy={y} r={r} fill={fill} stroke={stroke} />
-}
-
-function Curve({path}) {
-  return (
-    <path d={path} fill="none" stroke="steelblue" strokeWidth={1.5} />
-  );
-}
+import {HorizontalAxis, VerticalAxis} from './d3-axis';
+import store from './store'
+import {svgCoordinateOfEvent} from './manipulateSvg'
+import {Curve, Point} from './svgPrimitives'
+import {pointAdded, pointUpdated} from './plotSlice'
+import {polyByZeros} from './polynomials'
 
 let scaleX = scaleLinear().range([0, 1000]).domain([-10, 10]);
 let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
@@ -33,12 +22,14 @@ function pathLine(f) {
   return pathGenerator(points);
 }
 
-function PointTable({points, setPointState}) {
+function PointTable() {
+  const dispatch = useDispatch();
+  const points = useSelector(state => state.plot.points);
   const rows = points.map((point, idx) => (
     <tr key={point.id}>
-      <th><input type="checkbox" checked={point.enabled} onChange={(event) => setPointState(point.id, {enabled: event.target.checked})} /></th>
-      <th><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => setPointState(point.id, {x: Number(event.target.value)})} /></th>
-      <th><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => setPointState(point.id, {y: Number(event.target.value)})} /></th>
+      <th><input type="checkbox" checked={point.enabled} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {enabled: event.target.checked}})) } /></th>
+      <th><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {x: Number(event.target.value)}})) } /></th>
+      <th><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {y: Number(event.target.value)}})) } /></th>
     </tr>
   ));
   return (
@@ -51,43 +42,28 @@ function PointTable({points, setPointState}) {
   );
 }
 
-function SvgSample({plotFunction, points, updatePoints}) {
+function SvgSample({plotFunction}) {
+  const dispatch = useDispatch();
+
   const [verticalLineCoord, setVerticalLineCoord] = useState(null);
   const svgRef = useRef(null);
-  const svgLeft = () => svgRef.current.getBoundingClientRect().left + window.scrollX;
-  const svgTop  = () => svgRef.current.getBoundingClientRect().top  + window.scrollY;
 
-  // The cursor point, translated into svg coordinates
-  const svgCoordinateOfEvent = function (event) {
-    const pt = new DOMPoint(event.clientX, event.clientY);
-    return pt.matrixTransform(svgRef.current.getScreenCTM().inverse());
-  };
   const addPoint = function (event) {
-    const cursorPoint = svgCoordinateOfEvent(event);
+    const cursorPoint = svgCoordinateOfEvent(event, svgRef);
 
     const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
     const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
-    const id = uuidv4();
-    const newPoints = [
-      ...points,
-      {x, y, id, enabled: true}
-    ];
-    updatePoints(newPoints);
+    const id = nanoid();
+    const enabled = true;
+    dispatch( pointAdded({x,y,id,enabled}) );
   }
 
   const moveVertical = function (event) {
-    const cursorPoint = svgCoordinateOfEvent(event);
+    const cursorPoint = svgCoordinateOfEvent(event, svgRef);
     setVerticalLineCoord(scaleX.invert(cursorPoint.x).toFixed(1));
-    // const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
-    // const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
-    // const id = uuidv4();
-    // const newPoints = [
-    //   ...points,
-    //   {x, y, id, enabled: true}
-    // ];
-    // updatePoints(newPoints);
   }
 
+  const points = useSelector(state => state.plot.points);
 
   const pointElements = points.filter(point => point.enabled).map(point => (
     <Fragment key={point.id}>
@@ -108,34 +84,19 @@ function SvgSample({plotFunction, points, updatePoints}) {
   );
 }
 
-const pow = (a,b) => new OperatorNode('^', 'pow', [a,b]);
-const square = (a) => pow(a, new ConstantNode(2));
-const add = (a,b) => new OperatorNode('+', 'add', [a,b]);
-const mul = (a,b) => new OperatorNode('*', 'multiply', [a,b]);
-const subtract = (a,b) => new OperatorNode('-', 'subtract', [a,b]);
-const sum = (vals) => vals.reduce((res, cur) => add(res,cur));
-const prod = (vals) => vals.reduce((res, cur) => mul(res,cur));
-
-const polyByZeros = (x, zeros) => prod(zeros.map(z => (z >= 0) ? subtract(x, new ConstantNode(z)) : add(x, new ConstantNode(-z))))
-
 function LagrangeInterpolationPage() {
-  const [points, setPoints] = useState([]);
-  const [formula, setFormula] = useState( new ConstantNode(1) ); //String.raw`6.02 \cdot 10^{23}`);
-  const updatePoints = (newPoints) => {
-    setPoints(newPoints);
-    setFormula( polyByZeros(new SymbolNode('x'), newPoints.filter(point => point.enabled).map(point => point.x)) );
-  }
-  const setPointState = function(id, state) {
-    updatePoints(points.map(point => (point.id != id) ? point : {...point, ...state}));
-  }
+  const points = useSelector(state => state.plot.points);
+  const formula = useSelector(state => 
+    polyByZeros(state.plot.points.filter(point => point.enabled).map(point => point.x))
+  );
 
   return (
     <>
     <h1>Интерполяционный многочлен Лагранжа</h1>
     <h2>Полиномиальная интерполяция</h2>
     <div className={styles.configurablePlot}>
-      <SvgSample plotFunction={x => formula.evaluate({x: x})} points={points} updatePoints={updatePoints} />
-      <PointTable points={points} setPointState={setPointState} />
+      <SvgSample plotFunction={x => formula.evaluate({x: x})} />
+      <PointTable />
     </div>
     <p>Formula is <MathComponent display={false} tex={formula.toTex()} /></p>
     </>
@@ -152,7 +113,11 @@ function App() {
 
 function main() {
   const root = createRoot(document.getElementById('react-root'));
-  root.render(<App />);
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 }
 
 main()
