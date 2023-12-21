@@ -1,6 +1,7 @@
 import React, { StrictMode, Fragment, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
 import { Provider, useDispatch, useSelector } from 'react-redux'
+import { createSelector } from 'reselect';
 import { nanoid } from '@reduxjs/toolkit'
 import { MathComponent } from "mathjax-react";
 import {scaleLinear, line, curveMonotoneX} from "d3";
@@ -15,6 +16,11 @@ import {polyByZeros} from './polynomials'
 let scaleX = scaleLinear().range([0, 1000]).domain([-10, 10]);
 let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
 let scalePoint = (point) => ({...point, x: scaleX(point.x), y: scaleY(point.y)});
+
+const enabledPoints = createSelector(
+  (state) => state.plot.points,
+  (points) => points.filter(point => point.enabled),
+);
 
 function pathLine(f, scaleX, scaleY) {
   let points = scaleX.ticks(100).map(x => [x, f(x)]).map(([x,y]) => [scaleX(x), scaleY(y)]);
@@ -77,9 +83,8 @@ function SvgSample({plotFunction}) {
     setVerticalLineCoord(scaleX.invert(cursorPoint.x).toFixed(1));
   }
 
-  const points = useSelector(state => state.plot.points);
-
-  const pointElements = points.filter(point => point.enabled).map(point => (<HangingPoint point={point} key={point.id} />));
+  const points = useSelector(enabledPoints);
+  const pointElements = points.map(point => <HangingPoint point={point} key={point.id} />);
 
   return (
     <svg ref={svgRef} viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" className={styles.svgCanvas} onClick={(event) => addPoint(event, svgRef, dispatch)} onPointerMove={(event) => moveVertical(event)} >
