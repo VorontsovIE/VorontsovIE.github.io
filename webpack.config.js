@@ -15,6 +15,7 @@ module.exports = {
     filename: '[name].js',
     // filename: '[name].[contenthash].js',
   },
+  devtool: 'source-map',
   optimization: {
     usedExports: true,
   },

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const plotSlice = createSlice({
   name: 'plot',
   initialState: {
-    points: [],
+    points: [{id: 'point-1', x: -1, y: 3, enabled: true}, {id: 'point-2', x: 2, y: 2, enabled: true}],
   },
   reducers: {
     pointAdded: (state, action) => {

@@ -42,21 +42,21 @@ function PointTable() {
   );
 }
 
+const addPoint = function (event, svgRef, dispatch) {
+  const cursorPoint = svgCoordinateOfEvent(event, svgRef);
+
+  const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
+  const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
+  const id = nanoid();
+  const enabled = true;
+  dispatch( pointAdded({x,y,id,enabled}) );
+}
+
 function SvgSample({plotFunction}) {
   const dispatch = useDispatch();
 
   const [verticalLineCoord, setVerticalLineCoord] = useState(null);
   const svgRef = useRef(null);
-
-  const addPoint = function (event) {
-    const cursorPoint = svgCoordinateOfEvent(event, svgRef);
-
-    const x = Number((scaleX.invert(cursorPoint.x)).toFixed(1));
-    const y = Number((scaleY.invert(cursorPoint.y)).toFixed(1));
-    const id = nanoid();
-    const enabled = true;
-    dispatch( pointAdded({x,y,id,enabled}) );
-  }
 
   const moveVertical = function (event) {
     const cursorPoint = svgCoordinateOfEvent(event, svgRef);
@@ -74,7 +74,7 @@ function SvgSample({plotFunction}) {
   ));
 
   return (
-    <svg ref={svgRef} viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" className={styles.svgCanvas} onClick={(event) => addPoint(event)} onPointerMove={(event) => moveVertical(event)} >
+    <svg ref={svgRef} viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" className={styles.svgCanvas} onClick={(event) => addPoint(event, svgRef, dispatch)} onPointerMove={(event) => moveVertical(event)} >
       <HorizontalAxis scaleX={scaleX} scaleY={scaleY}  ticks={scaleX.ticks(10).filter(x => x != 0)} />
       <VerticalAxis scaleX={scaleX} scaleY={scaleY} />
       <Curve path={pathLine(plotFunction)} />
