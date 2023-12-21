@@ -22,16 +22,20 @@ function pathLine(f, scaleX, scaleY) {
   return pathGenerator(points);
 }
 
-function PointTable() {
+function PointTableRow({point}) {
   const dispatch = useDispatch();
-  const points = useSelector(state => state.plot.points);
-  const rows = points.map((point, idx) => (
-    <tr key={point.id}>
-      <th><input type="checkbox" checked={point.enabled} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {enabled: event.target.checked}})) } /></th>
-      <th><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {x: Number(event.target.value)}})) } /></th>
-      <th><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {y: Number(event.target.value)}})) } /></th>
+  return (
+    <tr>
+      <td><input type="checkbox" checked={point.enabled} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {enabled: event.target.checked}})) } /></td>
+      <td><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {x: Number(event.target.value)}})) } /></td>
+      <td><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {y: Number(event.target.value)}})) } /></td>
     </tr>
-  ));
+  );
+}
+
+function PointTable() {
+  const points = useSelector(state => state.plot.points);
+  const rows = points.map((point, idx) => <PointTableRow point={point} key={point.id} />);
   return (
     <table className={styles.pointTable}>
       <thead>
