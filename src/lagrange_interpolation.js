@@ -16,7 +16,7 @@ let scaleX = scaleLinear().range([0, 1000]).domain([-10, 10]);
 let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
 let scalePoint = (point) => ({...point, x: scaleX(point.x), y: scaleY(point.y)});
 
-function pathLine(f) {
+function pathLine(f, scaleX, scaleY) {
   let points = scaleX.ticks(100).map(x => [x, f(x)]).map(([x,y]) => [scaleX(x), scaleY(y)]);
   let pathGenerator = line().curve(curveMonotoneX);
   return pathGenerator(points);
@@ -52,6 +52,16 @@ const addPoint = function (event, svgRef, dispatch) {
   dispatch( pointAdded({x,y,id,enabled}) );
 }
 
+function HangingPoint({point}) {
+  return (
+    <>
+      <Point {...scalePoint(point)} />
+      <line x1={scaleX(point.x)} y1={scaleY(point.y)} x2={scaleX(point.x)} y2={scaleY(0)} stroke={"red"} stroke-dasharray="4 8" />
+      <Point x={scaleX(point.x)} y={scaleY(0)} fill="magenta" />
+    </>
+  );
+}
+
 function SvgSample({plotFunction}) {
   const dispatch = useDispatch();
 
@@ -65,21 +75,15 @@ function SvgSample({plotFunction}) {
 
   const points = useSelector(state => state.plot.points);
 
-  const pointElements = points.filter(point => point.enabled).map(point => (
-    <Fragment key={point.id}>
-      <Point {...scalePoint(point)} />
-      <line x1={scaleX(point.x)} y1={scaleY(point.y)} x2={scaleX(point.x)} y2={scaleY(0)} stroke={"red"} stroke-dasharray="4 8" />
-      <Point x={scaleX(point.x)} y={scaleY(0)} fill="magenta" />
-    </Fragment>
-  ));
+  const pointElements = points.filter(point => point.enabled).map(point => (<HangingPoint point={point} key={point.id} />));
 
   return (
     <svg ref={svgRef} viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" className={styles.svgCanvas} onClick={(event) => addPoint(event, svgRef, dispatch)} onPointerMove={(event) => moveVertical(event)} >
-      <HorizontalAxis scaleX={scaleX} scaleY={scaleY}  ticks={scaleX.ticks(10).filter(x => x != 0)} />
+      <HorizontalAxis scaleX={scaleX} scaleY={scaleY} ticks={scaleX.ticks(10).filter(x => x != 0)} />
       <VerticalAxis scaleX={scaleX} scaleY={scaleY} />
-      <Curve path={pathLine(plotFunction)} />
+      <Curve path={pathLine(plotFunction, scaleX, scaleY)} />
       {pointElements}
-      <line x1={scaleX(verticalLineCoord)} y1={scaleY.range()[0]} x2={scaleX(verticalLineCoord)} y2={scaleY.range()[1]} stroke={"red"} stroke-dasharray="4 8" />
+      <line x1={scaleX(verticalLineCoord)} y1={scaleY.range()[0]} x2={scaleX(verticalLineCoord)} y2={scaleY.range()[1]} stroke="red" stroke-dasharray="4 8" />
     </svg>
   );
 }
