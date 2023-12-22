@@ -37,7 +37,7 @@ function HangingPoint({point}) {
   return (
     <>
       <Point {...scalePoint(point)} />
-      <line x1={scaleX(point.x)} y1={scaleY(point.y)} x2={scaleX(point.x)} y2={scaleY(0)} stroke={"red"} stroke-dasharray="4 8" />
+      <line x1={scaleX(point.x)} y1={scaleY(point.y)} x2={scaleX(point.x)} y2={scaleY(0)} stroke="red" strokeDasharray="4 8" />
       <Point x={scaleX(point.x)} y={scaleY(0)} fill="magenta" />
     </>
   );
@@ -63,7 +63,7 @@ function SvgSample({plotFunction}) {
       <VerticalAxis scaleX={scaleX} scaleY={scaleY} />
       <Curve path={pathLine(plotFunction, scaleX, scaleY)} />
       {pointElements}
-      <line x1={scaleX(verticalLineCoord)} y1={scaleY.range()[0]} x2={scaleX(verticalLineCoord)} y2={scaleY.range()[1]} stroke="red" stroke-dasharray="4 8" />
+      <line x1={scaleX(verticalLineCoord)} y1={scaleY.range()[0]} x2={scaleX(verticalLineCoord)} y2={scaleY.range()[1]} stroke="red" strokeDasharray="4 8" />
     </svg>
   );
 }
