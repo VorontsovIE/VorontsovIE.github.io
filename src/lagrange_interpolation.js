@@ -1,8 +1,7 @@
 import React, { StrictMode, Fragment, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
 import { Provider, useDispatch, useSelector } from 'react-redux'
-import { createSelector } from 'reselect';
-import { nanoid } from '@reduxjs/toolkit'
+import { nanoid, createDraftSafeSelector } from '@reduxjs/toolkit'
 import { MathComponent } from "mathjax-react";
 import {scaleLinear, line, curveMonotoneX} from "d3";
 import styles from './lagrange_interpolation.css';
@@ -17,10 +16,21 @@ let scaleX = scaleLinear().range([0, 1000]).domain([-10, 10]);
 let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
 let scalePoint = (point) => ({...point, x: scaleX(point.x), y: scaleY(point.y)});
 
-const enabledPoints = createSelector(
-  (state) => state.plot.points,
-  (points) => points.filter(point => point.enabled),
+const allPointsSelector = createDraftSafeSelector(
+  [(state) => state],
+  (state) => state.plot.points
 );
+
+const enabledPointsSelector = createDraftSafeSelector(
+  [(state) => state],
+  (state) => state.plot.points.filter(point => point.enabled)
+);
+
+const formulaSelector = createDraftSafeSelector(
+  [(state) => enabledPointsSelector(state)],
+  (points) => polyByZeros(points.map(point => point.x))
+);
+
 
 function pathLine(f, scaleX, scaleY) {
   let points = scaleX.ticks(100).map(x => [x, f(x)]).map(([x,y]) => [scaleX(x), scaleY(y)]);
@@ -40,7 +50,7 @@ function PointTableRow({point}) {
 }
 
 function PointTable() {
-  const points = useSelector(state => state.plot.points);
+  const points = useSelector(allPointsSelector);
   const rows = points.map((point, idx) => <PointTableRow point={point} key={point.id} />);
   return (
     <table className={styles.pointTable}>
@@ -83,7 +93,7 @@ function SvgSample({plotFunction}) {
     setVerticalLineCoord(scaleX.invert(cursorPoint.x).toFixed(1));
   }
 
-  const points = useSelector(enabledPoints);
+  const points = useSelector(enabledPointsSelector);
   const pointElements = points.map(point => <HangingPoint point={point} key={point.id} />);
 
   return (
@@ -98,10 +108,7 @@ function SvgSample({plotFunction}) {
 }
 
 function LagrangeInterpolationPage() {
-  const points = useSelector(state => state.plot.points);
-  const formula = useSelector(state => 
-    polyByZeros(state.plot.points.filter(point => point.enabled).map(point => point.x))
-  );
+  const formula = useSelector(formulaSelector);
 
   return (
     <>
