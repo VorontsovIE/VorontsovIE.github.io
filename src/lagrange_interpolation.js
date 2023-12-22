@@ -1,65 +1,26 @@
 import React, { StrictMode, Fragment, useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
-import { Provider, useDispatch, useSelector } from 'react-redux'
-import { nanoid, createDraftSafeSelector } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { nanoid, createDraftSafeSelector } from '@reduxjs/toolkit';
 import { MathComponent } from "mathjax-react";
 import {scaleLinear, line, curveMonotoneX} from "d3";
 import styles from './lagrange_interpolation.css';
 import {HorizontalAxis, VerticalAxis} from './d3-axis';
-import store from './store'
-import {svgCoordinateOfEvent} from './manipulateSvg'
-import {Curve, Point} from './svgPrimitives'
-import {pointAdded, pointUpdated} from './plotSlice'
-import {polyByZeros} from './polynomials'
+import store from './store';
+import {svgCoordinateOfEvent} from './manipulateSvg';
+import {Curve, Point} from './svgPrimitives';
+import {pointAdded} from './plotSlice';
+import {PointTable} from './pointTable';
+import {enabledPointsSelector, formulaSelector} from './selectors';
 
 let scaleX = scaleLinear().range([0, 1000]).domain([-10, 10]);
 let scaleY = scaleLinear().range([500, 0]).domain([-10, 10]);
 let scalePoint = (point) => ({...point, x: scaleX(point.x), y: scaleY(point.y)});
 
-const allPointsSelector = createDraftSafeSelector(
-  [(state) => state],
-  (state) => state.plot.points
-);
-
-const enabledPointsSelector = createDraftSafeSelector(
-  [(state) => state],
-  (state) => state.plot.points.filter(point => point.enabled)
-);
-
-const formulaSelector = createDraftSafeSelector(
-  [(state) => enabledPointsSelector(state)],
-  (points) => polyByZeros(points.map(point => point.x))
-);
-
-
 function pathLine(f, scaleX, scaleY) {
   let points = scaleX.ticks(100).map(x => [x, f(x)]).map(([x,y]) => [scaleX(x), scaleY(y)]);
   let pathGenerator = line().curve(curveMonotoneX);
   return pathGenerator(points);
-}
-
-function PointTableRow({point}) {
-  const dispatch = useDispatch();
-  return (
-    <tr>
-      <td><input type="checkbox" checked={point.enabled} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {enabled: event.target.checked}})) } /></td>
-      <td><input type="number" className={styles.numberInput} step={0.1} value={point.x} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {x: Number(event.target.value)}})) } /></td>
-      <td><input type="number" className={styles.numberInput} step={0.1} value={point.y} onChange={(event) => dispatch(pointUpdated({id: point.id, update: {y: Number(event.target.value)}})) } /></td>
-    </tr>
-  );
-}
-
-function PointTable() {
-  const points = useSelector(allPointsSelector);
-  const rows = points.map((point, idx) => <PointTableRow point={point} key={point.id} />);
-  return (
-    <table className={styles.pointTable}>
-      <thead>
-        <tr><th>#</th><th>x</th><th>y</th></tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
 }
 
 const addPoint = function (event, svgRef, dispatch) {
