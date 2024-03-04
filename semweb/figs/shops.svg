@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="shops.svg"
+   inkscape:export-filename="/home/ilya/slon/Лекции/Семантические сети/figs/shops.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="317.57644"
+     inkscape:cy="-60.585671"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="745"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.52365959px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 479.6067,590.29135 72.04633,52.89187 -12.59972,-12.83695 -3.13097,4.57503 15.73069,7.88544"
+       id="path3061"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.52365959px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 686.67798,588.15011 -72.04633,52.89187 12.59972,-12.83695 3.13097,4.57503 -15.73069,7.88544"
+       id="path3061-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.72810358px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 588.86909,670.88866 0.35715,32.77191 1.56452,-8.73775 -3.48618,0 1.899,8.55971"
+       id="path3144"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.72810358px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 592.26195,723.56723 0.35715,32.77191 1.56452,-8.73775 -3.48618,0 1.899,8.55971"
+       id="path3144-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.81530722,0.57902861,-0.57902861,0.81530722,469.11873,107.44484)"
+       inkscape:transform-center-x="-18.268443"><flowRegion
+         id="flowRegion3168"><rect
+           id="rect3170"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172">класс</flowPara></flowRoot>    <flowRoot
+       transform="translate(282.48573,306.00632)"
+       xml:space="preserve"
+       id="flowRoot3166-8"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3168-7"><rect
+           id="rect3170-9"
+           width="79.999992"
+           height="20"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-2">подкласс</flowPara></flowRoot>    <flowRoot
+       transform="translate(281.77137,360.51432)"
+       xml:space="preserve"
+       id="flowRoot3166-8-0"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3168-7-2"><rect
+           id="rect3170-9-3"
+           width="79.999992"
+           height="20"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-2-7">подкласс</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 480.20768,556.67122 60.99595,-40.90998 -14.4736,5.78237 3.82795,5.73234 10.64565,-11.51471"
+       id="path3241-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.03853905px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 451.21314,555.56881 0.32568,-73.12013 2.68617,17.72239 -5.44859,1e-5 2.74175,-17.32516"
+       id="path3144-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="418.23615"
+       y="526.78217"
+       id="text3279"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="418.23615"
+         y="526.78217"
+         id="tspan3283">CPU</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.576035"
+       y="725.89581"
+       id="text3279-2"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.80675752,-0.59088265,0.59088265,0.80675752,0,0)"
+       inkscape:transform-center-x="-20.770233"
+       inkscape:transform-center-y="-6.3831431"><tspan
+         sodipodi:role="line"
+         x="57.576035"
+         y="725.89581"
+         id="tspan3283-8">RAM;Gb</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="539.3775"
+       y="514.02686"
+       id="text3279-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="539.3775"
+         y="514.02686"
+         id="tspan3283-7">&quot;6&quot;</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 692.82673,553.65911 -62.07167,-39.25864 14.62354,5.39194 -3.67276,5.83298 -10.95078,-11.22492"
+       id="path3241-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-y="-10" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.09089398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 753.49753,558.55161 69.10457,-38.79999 -17.4595,6.07857 4.30575,4.75662 13.15375,-10.83519"
+       id="path3241-5-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="715.46606"
+       y="523.93457"
+       id="text3279-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="715.46606"
+         y="523.93457"
+         id="tspan3283-1">CPU</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="824.92358"
+       y="61.468613"
+       id="text3279-2-9"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.82585329,0.56388505,-0.56388505,0.82585329,0,0)"
+       inkscape:transform-center-x="-8.2709778"
+       inkscape:transform-center-y="-12.984187"><tspan
+         sodipodi:role="line"
+         x="824.92358"
+         y="61.468613"
+         id="tspan3283-8-4">RAM;Gb</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="598.42218"
+       y="510.10315"
+       id="text3279-9-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="598.42218"
+         y="510.10315"
+         id="tspan3479">&quot;146&quot;</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.03853905px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 744.92831,557.20015 0.32568,-73.12013 2.68617,17.72239 -5.4486,10e-6 2.74176,-17.32516"
+       id="path3144-9-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.85465455px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 699.3968,462.50469 -67.71257,0.0708 13.36343,-2.59658 0.0727,5.19416 -13.43616,-2.59758"
+       id="path3241-5-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3436"
+       style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.99999359,0.00358263,-0.00358263,0.99999359,257.65722,294.85044)"
+       inkscape:transform-center-x="32.776161"
+       inkscape:transform-center-y="-28.213672"><flowRegion
+         id="flowRegion3438"><rect
+           id="rect3440"
+           width="75.110146"
+           height="12.351201"
+           x="243.95184"
+           y="169.48886"
+           style="font-size:9px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3442">производитель</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3436-1"
+       style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.99997706,0.0067728,-0.0067728,0.99997706,388.8079,293.17439)"><flowRegion
+         id="flowRegion3438-0"><rect
+           id="rect3440-6"
+           width="77.085419"
+           height="12.960613"
+           x="243.95184"
+           y="169.48886"
+           style="font-size:9px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3442-3">производитель</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3483"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(186.52283,223.84155)"><flowRegion
+         id="flowRegion3485"><rect
+           id="rect3487"
+           width="156.57362"
+           height="20.708134"
+           x="589.42401"
+           y="315.96097"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3489">позиция на продажу</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path3491"
+       sodipodi:cx="627.55725"
+       sodipodi:cy="285.40387"
+       sodipodi:rx="7.8286824"
+       sodipodi:ry="6.3134532"
+       d="m 635.38593,285.40387 c 0,3.48682 -3.50502,6.31345 -7.82868,6.31345 -4.32366,0 -7.82868,-2.82663 -7.82868,-6.31345 0,-3.48682 3.50502,-6.31345 7.82868,-6.31345 4.32366,0 7.82868,2.82663 7.82868,6.31345 z"
+       transform="matrix(0.52700518,0,0,0.57348639,497.43538,354.70216)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.83314931px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 833.12865,513.41006 52.18972,-29.96635 -13.18592,4.69465 3.25184,3.67367 9.93408,-8.36832"
+       id="path3241-5-2-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.93043071px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 836.37273,518.46171 56.81325,0.33643 -15.14773,1.47372 0,-3.28386 14.83908,1.78879"
+       id="path3144-06"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4297"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion4299"><rect
+           id="rect4301"
+           width="82.327431"
+           height="31.819805"
+           x="579.82758"
+           y="224.54218" /></flowRegion><flowPara
+         id="flowPara4303">Продпавец</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.85017231,-0.52650456,0.52650456,0.85017231,212.15937,603.2695)"><flowRegion
+         id="flowRegion4307"><rect
+           id="rect4309"
+           width="77.781754"
+           height="20.203051"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311">продавец</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305-1"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(289.92751,275.02733)"><flowRegion
+         id="flowRegion4307-5"><rect
+           id="rect4309-5"
+           width="77.781754"
+           height="20.203051"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311-4">цена</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4348"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(196.56344,227.4177)"><flowRegion
+         id="flowRegion4350"><rect
+           id="rect4352"
+           width="106.06602"
+           height="26.769035"
+           x="697.51031"
+           y="277.0701"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara4354">&quot;5<flowSpan
+   style="font-size:16px"
+   id="flowSpan4677">0</flowSpan>00&quot;</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3483-6"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.95324468,0.30219958,-0.30219958,0.95324468,-191.52749,17.108176)"><flowRegion
+         id="flowRegion3485-5"><rect
+           id="rect3487-6"
+           width="156.57362"
+           height="20.708134"
+           x="589.42401"
+           y="315.96097"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3489-9">позиция на продажу</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path3491-3"
+       sodipodi:cx="627.55725"
+       sodipodi:cy="285.40387"
+       sodipodi:rx="7.8286824"
+       sodipodi:ry="6.3134532"
+       d="m 635.38593,285.40387 c 0,3.48682 -3.50502,6.31345 -7.82868,6.31345 -4.32366,0 -7.82868,-2.82663 -7.82868,-6.31345 0,-3.48682 3.50502,-6.31345 7.82868,-6.31345 4.32366,0 7.82868,2.82663 7.82868,6.31345 z"
+       transform="matrix(0.52700518,0,0,0.57348639,-49.824788,367.29895)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.83314931px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.09531,518.28623 -36.549648,-47.81081 10.346288,9.42671 -4.419121,2.13113 -5.927167,-11.55784"
+       id="path3241-5-2-2-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-x="18.691399" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305-5"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-350.41789,313.06416)"><flowRegion
+         id="flowRegion4307-2"><rect
+           id="rect4309-54"
+           width="77.781754"
+           height="20.203051"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311-7">продавец</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3483-6-4"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.23637464,0.97166199,-0.97166199,0.23637464,613.21236,-30.060584)"><flowRegion
+         id="flowRegion3485-5-9"><rect
+           id="rect3487-6-2"
+           width="156.57362"
+           height="20.708134"
+           x="589.42401"
+           y="315.96097"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3489-9-0">позиция на продажу</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path3491-3-6"
+       sodipodi:cx="627.55725"
+       sodipodi:cy="285.40387"
+       sodipodi:rx="7.8286824"
+       sodipodi:ry="6.3134532"
+       d="m 635.38593,285.40387 c 0,3.48682 -3.50502,6.31345 -7.82868,6.31345 -4.32366,0 -7.82868,-2.82663 -7.82868,-6.31345 0,-3.48682 3.50502,-6.31345 7.82868,-6.31345 4.32366,0 7.82868,2.82663 7.82868,6.31345 z"
+       transform="matrix(0.52700518,0,0,0.57348639,170.33727,679.07663)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.83314931px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 496.43455,846.74674 -52.18973,29.9664 13.18592,-4.6947 -3.25184,-3.6736 -9.93408,8.3683"
+       id="path3241-5-2-2-7-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.04164052px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 493.88942,842.12755 -73.70206,0.3251 19.65068,1.4238 0,-3.1727 -19.25027,1.72823"
+       id="path3144-06-4-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305-5-2"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-140.22494,593.1082)"><flowRegion
+         id="flowRegion4307-2-6"><rect
+           id="rect4309-54-6"
+           width="77.781754"
+           height="20.203051"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311-7-4">продавец</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4348-8-8"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-287.17144,600.61844)"><flowRegion
+         id="flowRegion4350-4-7"><rect
+           id="rect4352-3-1"
+           width="106.06602"
+           height="26.769035"
+           x="697.51031"
+           y="277.0701"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara4354-1-7">&quot;300&quot;</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1.47125721;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 443.10617,589.79928 53.93745,241.74554 -4.84962,-34.40526 -5.91653,1.52246 10.76615,32.8828"
+       id="path3241-5-2-7-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305-1-7"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-96.993053,636.42647)"><flowRegion
+         id="flowRegion4307-5-2"><rect
+           id="rect4309-5-2"
+           width="77.781754"
+           height="20.203051"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311-4-6">цена</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1.95144689px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 147.11056,544.3821 -43.63463,124.9382 14.91984,-26.49576 -10.28207,-4.82622 -4.63777,31.32198"
+       id="path3241-5-2-2-7-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4305-1-7-4"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.69809795,0.71600226,-0.71600226,0.69809795,-123.21807,-125.28701)"><flowRegion
+         id="flowRegion4307-5-2-9"><rect
+           id="rect4309-5-2-0"
+           width="112.78174"
+           height="18.060192"
+           x="561.13971"
+           y="224.03709"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4311-4-6-9">срок доставки</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.93043071px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 269.48559,531.61155 -56.81326,0.33643 15.14773,1.47372 0,-3.28386 -14.83908,1.78879"
+       id="path3144-06-4-9-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4645"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-11.563902,-367.36813)"><flowRegion
+         id="flowRegion4647"><rect
+           id="rect4649"
+           width="55"
+           height="41.42857"
+           x="77.14286"
+           y="811.64789"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara4651">&quot;7&quot;</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4653"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.36469029,-0.93112888,0.93112888,0.36469029,-722.33452,534.13202)"><flowRegion
+         id="flowRegion4655"><rect
+           id="rect4657"
+           width="135.00002"
+           height="20.714277"
+           x="167.85715"
+           y="779.50507"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4659">местоположение</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4669"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-9.34963,-71.72526)"><flowRegion
+         id="flowRegion4671"><rect
+           id="rect4673"
+           width="87.142868"
+           height="50.000008"
+           x="90"
+           y="749.50507"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara4675">&quot;30°15′N; 120°10′E&quot;</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-5"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-114.86085,243.22617)"><flowRegion
+         id="flowRegion3168-74"><rect
+           id="rect3170-1"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-8">класс</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1.42376626px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 398.93024,566.71521 -107.8605,-30.8489 18.86303,7.48707 4.68738,-2.66835 -23.55041,-4.59915"
+       id="path3061-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.55187654px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 192.67648,548.61591 0.27276,194.94182 2.69483,-20.27624 -6.32663,0 3.61449,19.21717"
+       id="path3144-06-4-9-1-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.80866194px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 385.36447,833.89909 -31.32128,-56.11189 8.44706,8.33917 -3.86219,6.42583 -4.58487,-14.765"
+       id="path3241-5-2-2-7-8-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.55525899px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 216.47235,891.094 133.81225,42.09594 -26.72504,-14.13858 -3.88384,9.04428 30.60888,5.0943"
+       id="path3241-5-2-2-7-5-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4653-3"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.95019971,0.31164165,-0.31164165,0.95019971,293.99272,104.29776)"><flowRegion
+         id="flowRegion4655-3"><rect
+           id="rect4657-3"
+           width="135.00002"
+           height="20.714277"
+           x="167.85715"
+           y="779.50507"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara4659-8">местоположение</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4669-6"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(268.2356,177.56551)"><flowRegion
+         id="flowRegion4671-0"><rect
+           id="rect4673-4"
+           width="87.142868"
+           height="50.000008"
+           x="90"
+           y="749.50507"
+           style="font-size:16px" /></flowRegion><flowPara
+         id="flowPara4675-8">&quot;55°33'N; 37°31'E&quot;</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-5-3-8"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-153.09345,450.72442)"><flowRegion
+         id="flowRegion3168-74-8-8"><rect
+           id="rect3170-1-8-9"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-8-3-7">класс</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.94471824px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 219.89116,857.00595 -20.468,-75.2709 6.92766,16.04623 -4.65852,1.0334 -2.26914,-17.07963"
+       id="path3241-5-2-2-7-8-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-y="16.07405" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-5-3-3"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(65.009139,425.097)"><flowRegion
+         id="flowRegion3168-74-8-0"><rect
+           id="rect3170-1-8-3"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-8-3-0">класс</flowPara></flowRoot>    <flowRoot
+       transform="translate(-73.454581,355.10395)"
+       xml:space="preserve"
+       id="flowRoot3166-8-9"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3168-7-25"><rect
+           id="rect3170-9-4"
+           width="79.999992"
+           height="20"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-2-0">подкласс</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.93043071px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 297.10721,753.08777 -56.81326,0.3365 15.14773,1.4737 0,-3.2839 -14.83908,1.7888"
+       id="path3144-06-4-9-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.89756137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 721.57694,916.19228 52.34612,0.33979 -13.95668,1.48847 0,-3.31672 13.6723,1.80669"
+       id="path3144-06-4-9-1-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-5-3-8-5"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(416.88721,526.29148)"><flowRegion
+         id="flowRegion3168-74-8-8-6"><rect
+           id="rect3170-1-8-9-2"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-8-3-7-9">класс</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-1"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.81604685,-0.57798575,0.57798575,0.81604685,176.66699,504.37174)"
+       inkscape:transform-center-x="-6.0039677"
+       inkscape:transform-center-y="-17.292454"><flowRegion
+         id="flowRegion3168-2"><rect
+           id="rect3170-7"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-0">класс</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.93043071px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 715.03249,941.03058 51.95727,22.98481 -14.47703,-4.6948 1.31071,-3.01094 12.89184,7.56297"
+       id="path3144-06-4-9-1-3-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-x="-5"
+       inkscape:transform-center-y="11.95762" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-5-3-8-5-3"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.9063303,0.42256997,-0.42256997,0.9063303,598.25491,457.30059)"><flowRegion
+         id="flowRegion3168-74-8-8-6-6"><rect
+           id="rect3170-1-8-9-2-0"
+           width="47.857147"
+           height="17.142853"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-8-3-7-9-6">ареал</flowPara></flowRoot>    <g
+       id="g3468">
+      <flowRoot
+         transform="translate(90.771156,52.058369)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;stroke-width:1;stroke-miterlimit:3.89999999999999991;stroke-dasharray:none;stroke-opacity:1"
+         id="flowRoot4946"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4948"><rect
+             style="stroke-width:1;stroke-miterlimit:3.89999999999999991;stroke-dasharray:none;stroke:none;stroke-opacity:1"
+             y="694.76819"
+             x="54.548237"
+             height="28.284258"
+             width="109.09647"
+             id="rect4950" /></flowRegion><flowPara
+           id="flowPara4952">Магазин</flowPara></flowRoot>      <rect
+         transform="translate(0,308.2677)"
+         y="438.09448"
+         x="137"
+         height="29"
+         width="103"
+         id="rect4104"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.50000000000000000;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter" />
+    </g>
+    <g
+       id="g3461">
+      <flowRoot
+         transform="translate(-501.45485,633.80998)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot4340-7-1"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4342-8-8"><rect
+             y="226.0574"
+             x="658.61945"
+             height="31.072098"
+             width="199.32794"
+             id="rect4344-6-9" /></flowRegion><flowPara
+           id="flowPara4346-8-6">Утконос (магазин)</flowPara></flowRoot>      <rect
+         y="860.45325"
+         x="153.09103"
+         height="27.817926"
+         width="199.81793"
+         id="rect4104-7"
+         style="fill:none;stroke:#000000;stroke-width:0.68207473;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3426">
+      <flowRoot
+         transform="translate(-290.11958,608.24916)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot4340-7-9"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4342-8-5"><rect
+             y="226.0574"
+             x="658.61945"
+             height="24.243662"
+             width="115.66247"
+             id="rect4344-6-0" /></flowRegion><flowPara
+           id="flowPara4346-8-4">Avito</flowPara></flowRoot>      <rect
+         y="834.79474"
+         x="364.9325"
+         height="29.134996"
+         width="54.634998"
+         id="rect4104-9"
+         style="fill:none;stroke:#000000;stroke-width:0.3650021;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3433">
+      <flowRoot
+         transform="translate(0,308.2677)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot5235"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5237"><rect
+             y="436.09448"
+             x="306"
+             height="36"
+             width="134"
+             id="rect5239" /></flowRegion><flowPara
+           id="flowPara5241">Магазин б/у</flowPara></flowRoot>      <rect
+         y="743.89484"
+         x="303.53262"
+         height="28.934748"
+         width="131.93475"
+         id="rect4104-2"
+         style="fill:none;stroke:#000000;stroke-width:0.56525165;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3475">
+      <flowRoot
+         transform="translate(-558.04008,291.51921)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot4340-7"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4342-8"><rect
+             y="226.0574"
+             x="658.61945"
+             height="24.243662"
+             width="115.66247"
+             id="rect4344-6" /></flowRegion><flowPara
+           id="flowPara4346-8">AliExpress</flowPara></flowRoot>      <rect
+         y="517.85468"
+         x="99.492477"
+         height="26.015038"
+         width="108.01504"
+         id="rect4104-0"
+         style="fill:none;stroke:#000000;stroke-width:0.48496091;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3391">
+      <flowRoot
+         transform="translate(310.6494,394.55334)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2985"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2987"><rect
+             style="font-size:20px"
+             y="163.79076"
+             x="97.14286"
+             height="26.785717"
+             width="149.99998"
+             id="rect2989" /></flowRegion><flowPara
+           id="flowPara2991">Thinkpad x201</flowPara></flowRoot>      <rect
+         y="558.42682"
+         x="400.56464"
+         height="28.870737"
+         width="163.87074"
+         id="rect4104-23"
+         style="fill:none;stroke:#000000;stroke-width:0.62926275;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3386">
+      <text
+         inkscape:transform-center-y="7.8286822"
+         inkscape:transform-center-x="41.416254"
+         sodipodi:linespacing="125%"
+         id="text3279-9-3"
+         y="473.73615"
+         x="416.74472"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3283-7-6"
+           y="473.73615"
+           x="416.74472"
+           sodipodi:role="line">Core-i3</tspan></text>
+      <rect
+         y="453.83542"
+         x="404.47324"
+         height="25.053553"
+         width="95.053543"
+         id="rect4104-75"
+         style="fill:none;stroke:#000000;stroke-width:0.44644833;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3374">
+      <text
+         inkscape:transform-center-y="7.8286822"
+         inkscape:transform-center-x="41.416254"
+         sodipodi:linespacing="125%"
+         id="text3279-9-3-4"
+         y="473.28702"
+         x="710.37817"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3283-7-6-5"
+           y="473.28702"
+           x="710.37817"
+           sodipodi:role="line">Core-i9</tspan></text>
+      <rect
+         y="451.83551"
+         x="705.97333"
+         height="29.053318"
+         width="82.053322"
+         id="rect4104-92"
+         style="fill:none;stroke:#000000;stroke-width:0.44668189;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3398">
+      <flowRoot
+         transform="translate(568.9701,393.89739)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2985-1"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2987-2"><rect
+             style="font-size:20px"
+             y="163.79076"
+             x="97.14286"
+             height="25.000011"
+             width="97.499992"
+             id="rect2989-7" /></flowRegion><flowPara
+           id="flowPara2991-0">Acer+++</flowPara></flowRoot>      <rect
+         y="559.85352"
+         x="658.49133"
+         height="27.017353"
+         width="103.01736"
+         id="rect4104-28"
+         style="fill:none;stroke:#000000;stroke-width:0.48264632;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3379">
+      <flowRoot
+         transform="translate(235.21624,322.52864)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3471"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3473"><rect
+             y="126.0523"
+             x="342.94678"
+             height="27.274117"
+             width="51.012707"
+             id="rect3475" /></flowRegion><flowPara
+           id="flowPara3477">Intel</flowPara></flowRoot>      <rect
+         y="447.34473"
+         x="575.47284"
+         height="29.154741"
+         width="48.851437"
+         id="rect4104-97"
+         style="fill:none;stroke:#000000;stroke-width:0.34525955;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3482">
+      <flowRoot
+         transform="translate(226.36294,234.99384)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot4340"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4342"><rect
+             y="226.0574"
+             x="658.61945"
+             height="24.243662"
+             width="115.66247"
+             id="rect4344" /></flowRegion><flowPara
+           id="flowPara4346">Kickstarter</flowPara></flowRoot>      <rect
+         y="460.87506"
+         x="884.51288"
+         height="28.974272"
+         width="113.97427"
+         id="rect4104-3"
+         style="fill:none;stroke:#000000;stroke-width:0.52572918;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3405">
+      <flowRoot
+         transform="translate(510.09251,425.02942)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2993"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2995"><rect
+             style="font-size:20px"
+             y="218.98633"
+             x="40.406101"
+             height="27.834322"
+             width="90.665016"
+             id="rect2997" /></flowRegion><flowPara
+           id="flowPara2999">Ноутбук</flowPara></flowRoot>      <rect
+         y="645.84448"
+         x="540.4823"
+         height="25.035355"
+         width="103.03535"
+         id="rect4104-6"
+         style="fill:none;stroke:#000000;stroke-width:0.46464619;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3412">
+      <flowRoot
+         style="font-size:36px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2993-3"
+         xml:space="preserve"
+         transform="translate(488.31238,478.12189)"><flowRegion
+           id="flowRegion2995-6"><rect
+             y="218.98633"
+             x="40.406101"
+             height="29.38545"
+             width="124.78432"
+             id="rect2997-7" /></flowRegion><flowPara
+           style="font-size:20px"
+           id="flowPara2999-5">Компьютер</flowPara></flowRoot>      <rect
+         y="702.85217"
+         x="525.48999"
+         height="21.019896"
+         width="131.0199"
+         id="rect4104-6-1"
+         style="fill:none;stroke:#000000;stroke-width:0.48010504;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3419">
+      <flowRoot
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot2993-3-3"
+         xml:space="preserve"
+         transform="translate(482.69698,537.36899)"><flowRegion
+           id="flowRegion2995-6-5"><rect
+             style="font-size:20px"
+             y="218.98633"
+             x="40.406101"
+             height="26.640354"
+             width="139.3746"
+             id="rect2997-7-6" /></flowRegion><flowPara
+           id="flowPara2999-5-2">Электроника</flowPara></flowRoot>      <rect
+         y="756.88348"
+         x="521.5213"
+         height="24.95738"
+         width="140.95737"
+         id="rect4104-6-2"
+         style="fill:none;stroke:#000000;stroke-width:0.54262;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3440">
+      <flowRoot
+         transform="translate(-30.57227,678.63423)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot4340-7-1-3"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4342-8-8-6"><rect
+             y="226.0574"
+             x="658.61945"
+             height="26.829472"
+             width="87.605072"
+             id="rect4344-6-9-7" /></flowRegion><flowPara
+           id="flowPara4346-8-6-5">Утконос</flowPara></flowRoot>      <rect
+         y="906.33655"
+         x="620.47437"
+         height="25.051237"
+         width="96.051231"
+         id="rect4104-6-9"
+         style="fill:none;stroke:#000000;stroke-width:0.44876444;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3447">
+      <flowRoot
+         transform="translate(0,308.2677)"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3286"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3288"><rect
+             y="589.09448"
+             x="779"
+             height="48"
+             width="203"
+             id="rect3290" /></flowRegion><flowPara
+           id="flowPara3292">Млекопитающее</flowPara></flowRoot>      <rect
+         y="898.91992"
+         x="777.55774"
+         height="24.88452"
+         width="181.88451"
+         id="rect4104-6-3"
+         style="fill:none;stroke:#000000;stroke-width:0.61548132;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3454">
+      <flowRoot
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot3286-2"
+         xml:space="preserve"
+         transform="translate(-5.98888,369.42851)"><flowRegion
+           id="flowRegion3288-6"><rect
+             y="589.09448"
+             x="779"
+             height="48"
+             width="203"
+             id="rect3290-1" /></flowRegion><flowPara
+           id="flowPara3292-8">Австралия</flowPara></flowRoot>      <rect
+         y="959.85748"
+         x="771.4953"
+         height="25.009352"
+         width="115.00935"
+         id="rect4104-6-19"
+         style="fill:none;stroke:#000000;stroke-width:0.49064815;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.82643294px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 501.0847,463.76412 62.97355,0.0792 -12.43555,-2.61224 -0.0526,5.2223 12.48828,-2.61006"
+       id="path3241-5-6-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 484.69033,450.96626 45.30548,-57.8061 -11.96744,9.98505 5.41666,4.26295 6.55078,-14.248"
+       id="path3241-5-67"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-x="61.156935"
+       inkscape:transform-center-y="-5.29897" />
+    <g
+       id="g3369">
+      <rect
+         y="367.36325"
+         x="540.50104"
+         height="24.997896"
+         width="120.49789"
+         id="rect4104-75-5"
+         style="fill:none;stroke:#000000;stroke-width:0.50210416;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         inkscape:transform-center-y="7.8286822"
+         inkscape:transform-center-x="41.416254"
+         sodipodi:linespacing="125%"
+         id="text3279-9-3-3"
+         y="386.31824"
+         x="544.82617"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3283-7-6-56"
+           y="386.31824"
+           x="544.82617"
+           sodipodi:role="line">Процессор</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 714.65274,448.76523 -45.30548,-57.8061 11.96744,9.98505 -5.41666,4.26295 -6.55078,-14.248"
+       id="path3241-5-67-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:transform-center-x="-61.156935"
+       inkscape:transform-center-y="-5.29897" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-1-9"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.7199323,-0.69404429,0.69404429,0.7199323,-10.255459,381.38796)"
+       inkscape:transform-center-x="-3.3608717"
+       inkscape:transform-center-y="-17.981666"><flowRegion
+         id="flowRegion3168-2-1"><rect
+           id="rect3170-7-2"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-0-7">класс</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3166-1-9-0"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.62155001,0.78337448,-0.78337448,0.62155001,788.58548,-77.133428)"
+       inkscape:transform-center-x="-17.58762"
+       inkscape:transform-center-y="5.0622614"><flowRegion
+         id="flowRegion3168-2-1-9"><rect
+           id="rect3170-7-2-3"
+           width="42.857136"
+           height="17.142862"
+           x="313.21429"
+           y="365.93362"
+           style="font-size:14px;fill:#0000ff" /></flowRegion><flowPara
+         id="flowPara3172-0-7-6">класс</flowPara></flowRoot>  </g>
+</svg>

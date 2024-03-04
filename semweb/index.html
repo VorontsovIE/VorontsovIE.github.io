@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Семантические сети</title>
+
+		<meta name="author" content="Илья Воронцов">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/autosome_full.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			span.datakey {
+				font-style: italic;
+				padding-right: 30px;
+			}
+			table.full-bordered, table.full-bordered tr, table.full-bordered td, table.full-bordered th {
+				border: 1px solid black;
+			}
+			pre.mono {
+			  font-family: monospace;
+			}
+			img {
+				padding:10px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+								
+				<section data-background-color="#e6f0fa">
+					<section>
+						<h2 style="padding: 50px;">Семантические сети</h2>
+						<p>Илья Воронцов</p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Кратчайшая история веба</h2>
+					<ul>
+					<li class="fragment" data-fragment-index="1">
+					Сеть интернет появилась в <span class="fragment fade-out" style="color:red;" data-fragment-index="2">???</span>
+					<span class="fragment fade-in" data-fragment-index="2"><u>1969</u></span> году</li>
+					<li class="fragment" data-fragment-index="3">Всемирная паутина (WWW) родилась в CERN в <span  class="fragment fade-out" style="color:red;" data-fragment-index="4">???</span><u><span class="fragment fade-in" data-fragment-index="4">1989</span></u> году. Её автор - сэр Тим Бёрнерс-Ли.</li>
+					<li class="fragment" data-fragment-index="5">В 1998 году Тим Бёрнерс-Ли предложил концепцию семантической паутины.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Идеи, на которых стоит веб</h2>
+					<ul>
+						<li>Децентрализация - на каждом компьютере можно развернуть сайт</li>
+						<li>Универсальные адреса URI, состоящие из адреса сайта и адреса</li>
+						<li>Гиперссылки, позволяющие связать все сайты в единую сеть</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<div>
+							<h2>Для чего веб подходит</h2>
+							<ul>
+								<li>Читать тексты</li>
+								<li>Скачивать файлы и прочие мемасики</li>
+								<li>Бесцельно ходить со страницы на страницу</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<h2>Для чего веб не подходит</h2>
+							<ul>
+								<li style="color: red;">Чтобы его читали роботы<span class="fragment"><br/>(нет, это не шутка)</span></li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Как интернет видит человек</h2>
+						<div style="margin-top:30px;">
+							"Школа Слон пройдёт с 14 по 30 июля в городе Пущино. В ней могут участвовать школьники с 7 по 11 классы, сдавшие вступительное задание. По всем вопросам звоните директору школы Ивану Неретину. Его контакты вы можете найти на странице [ссылка](Контакты)."
+						</div>
+					</section>
+					<section>
+						<h2>Как интернет видит компьютер</h2>
+						<div style="margin-top:30px;">
+							<div style="display:inline-block; margin: 0 15px;">[ссылка]</div>
+							<div style="display:inline-block; margin: 0 15px;">с 7 по 11</div>
+							<div style="display:inline-block; margin: 0 15px;">июль</div>
+							<div style="display:inline-block; margin: 0 15px;">страница</div>
+							<div style="display:inline-block; margin: 0 15px;">Иван Неретин</div>
+							<div style="display:inline-block; margin: 0 15px;">город Пущино</div>
+							<div style="display:inline-block; margin: 0 15px;">вступить</div>
+							<div style="display:inline-block; margin: 0 15px;">вопросы</div>
+							<div style="display:inline-block; margin: 0 15px;">школа Слон</div>
+							<div style="display:inline-block; margin: 0 15px;">класс</div>
+							<div style="display:inline-block; margin: 0 15px;">директор</div>
+							<div style="display:inline-block; margin: 0 15px;">задание</div>
+							<div style="display:inline-block; margin: 0 15px;">контакты</div>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Машиночитаемый интернет</h2>
+						<ul>
+						<li><span class="datakey">Событие:</span> Школа Слон</li>
+						<li><span class="datakey">Даты:</span> 14 июля 2017 - 30 июля 2017</li>
+						<li><span class="datakey">Место:</span> город Пущино.</li>
+						<li><span class="datakey">Условия участия:</span>
+							<ul>
+							<li><span class="datakey">Род деятельности:</span> школьник</li>
+							<li><span class="datakey">Класс школы:</span> 7 - 11</li>
+							</ul>
+						</li>
+						<li><span class="datakey">Контакты:</span>
+							<ul>
+							<li><span class="datakey">Должность:</span> директор</li>
+							<li><span class="datakey">ФИО:</span> Иван Неретин</li>
+							<li><span class="datakey">Телефон:</span> ...</li>
+							</ul>
+						</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Что изменилось</h2>
+						<ul>
+							<li>Каждый факт теперь идёт отдельным утверждением</li>
+							<li>Каждое утверждение имеет чёткую структуру</li>
+							<li>Зная небольшой "словарь" терминов:<br/>"Событие", "Дата", "ФИО",..., <br/>компьютер может понять "смысл" (семантику) сказанного</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>И зачем это нужно?</h2>
+						<ul>
+							<li>Во-первых, это красиво</li>
+						</ul>
+					</section>
+					<section>
+						<h2>И зачем это нужно?</h2>
+						<img src="figs/sci_pop.jpg" style="height: 650px;" />
+					</section>
+					<section>
+						<h2>И зачем это нужно?</h2>
+						<ul>
+							<li><s>Во-первых, это красиво</s></li>
+							<li class="fragment">Поиск будет лучше работать:<br/>теперь понятно, какие части текста ключевые</li>
+							<li class="fragment">Компьютер cможет сам давать ответы на вопросы:<br/>
+								- Кто может поехать в школу Слон?<br/>
+								- Как связаться с Иваном Неретиным?
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Больше вопросов</h2>
+						<ul>
+							<li>Ноутбуки с объемом памяти > 8GB по цене до $1000</li>
+							<li>10 самых длинных рек России</li>
+							<li>Какие американские президенты родились в Техасе?</li>
+							<li>Прямые потомки Петра I</li>
+							<li>Список вакцин по болезням</li>
+							<li>Кто нарисовал больше всего котиков?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Усложняем вопросы</h2>
+						<ul>
+							<li>Ближайший магазин, где можно купить ноутбук с памятью > 8Gb по цене до $1000</li>
+							<li>Суммарное население городов вдоль 3 самых длинных рек России</li>
+							<li>Учёные, впервые открывшие вакцины от разных болезней, с датами открытия</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Реляционные базы данных</h2>
+						<div>
+							Чтобы отвечать на подобные вопросы нам нужна база данных.
+							<div>
+							<b>Ноутбуки с объемом памяти > 8GB по цене до $1000</b>
+							</div>
+							<div class="fragment">
+							<table class="full-bordered">
+								<thead><tr><th>Модель</th><th>CPU</th><th>ОЗУ</th><th>Магазин</th><th>Ср.цена</th></tr></thead>
+								<tbody>
+								<tr><td>Thinkpad x201</td><td>Core-i5</td><td>6 Gb</td><td>AliExpress</td><td>N/A</td></tr>
+								<tr><td>Acer+++</td><td>Core-i9</td><td>146 Gb</td><td>Kickstarter</td><td>5000</td></tr>
+								</tbody>
+							</table>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>Реляционные базы данных</h2>
+						<div><b>Ближайший магазин, где можно купить ноутбук с памятью > 8Gb по цене до $1000</b></div>
+						<div class="fragment" data-fragment-index="1">
+							<table class="full-bordered">
+								<thead><tr><th>Модель</th><th>CPU</th><th>ОЗУ</th><th>Магазин</th><th>Ср.цена</th></tr></thead>
+								<tbody>
+								<tr><td>Thinkpad</td><td>Core-i5</td><td>6 Gb</td><td class="fragment highlight-blue" data-fragment-index="2">AliExpress</td><td>N/A</td></tr>
+								<tr><td>Acer++</td><td>Core-i9</td><td>146 Gb</td><td>Kickstarter</td><td>5000</td></tr>
+								</tbody>
+							</table>
+							<table class="full-bordered" style="margin-top: 20px;">
+								<thead><tr><th>Магазин</th><th>Координаты</th><th>Срок доставки</th></tr></thead>
+								<tbody>
+								<tr><td class="fragment highlight-blue" data-fragment-index="2">AliExpress</td><td>30°15′N; 120°10′E.</td><td>7 дней</td></tr>
+								<tr><td>Утконос</td><td>55°33'N; 37°31'E </td><td>1 день</td></tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<section>
+						<h2>Реляционные базы данных. JOIN</h2>
+						<div>
+							<div>
+							<b>Ближайший магазин, где можно купить ноутбук с памятью > 8Gb по цене до $1000</b>
+							</div>
+							<table class="full-bordered" style="font-size:0.8em">
+								<thead><tr><th>Модель</th><th>CPU</th><th>ОЗУ</th><th>Магазин</th><th>Ср.цена</th><th>Координаты</th><th>Срок доставки</th></tr></thead>
+								<tbody>
+								<tr><td>Thinkpad</td><td>Core-i5</td><td>6 Gb</td><td>AliExpress</td><td>N/A</td><td>30°15′N; 120°10′E.</td><td>7 дней</td></tr>
+								</tbody>
+							</table>
+							<div>Объединение таблиц</div>
+						</div>
+					</section>
+					<section>
+						<h2>Реляционные базы данных.</h2>
+						<div>Реляционные базы данных прекрасно работают в пределах одного узкоспециализированного сайта</div>
+						<div>Но наша цель - оцифровать весь интернет</div>
+					</section>
+					<section>
+						<h2>Почему обычные базы данных плохо подходят?</h2>
+						<ul>
+							<li class="fragment">Данные очень разнородны. А в таблицу нельзя добавить поле только для одной записи →
+								<ul>
+									<li>либо мало полей (не все данные записали)</li>
+									<li>либо много полей (но большая часть полей не заполнена)</li>
+								</ul>
+							</li>
+							<li class="fragment">Нужна специальная таблица для каждого типа объектов. Понадобятся миллионы таблиц.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Семантическая сеть и семантическая паутина</h2>
+						<div style="margin-top: 30px;">Cемантическая сеть - это граф, в котором вершинами являются объекты или понятия предметной области, а (ориентированные) ребра описывают отношения между ними.</div>
+					</section>
+					<section>
+						<h2>Семантическая сеть и семантическая паутина</h2>
+						<div style="margin-top: 30px;">Семантическая паутина - это семантическая сеть, построенная на основе веба за счёт стандартизации разметки на сайтах.</div>
+						<div style="margin-top: 30px;">Linked data (связанные данные) - то же самое.</div>
+					</section>
+					<section>
+						<h2>Пример семантической сети</h2>
+						<img src="figs/shops.png" style="padding:10px;">
+					</section>
+					<section>
+						<h2>Как работает семантика: объекты</h2>
+						<div style="margin-top:30px;">Наша сеть не знает, <b>что</b> такое ноутбук, но она уже знает, как он <b>связан</b> с другими объектами.</div>
+						<ul style="margin-top:30px;">
+						<li>ноутбуков бывает по-крайней мере 2 разных</li>
+						<li>ноутбуки характеризует какой-то процессор и какая-то оперативная память</li>
+						<li>ноутбуки являются подвидом компьютеров</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Как работает семантика: свойства</h2>
+						<div style="margin-top:30px;">Сеть не знает, что означает "CPU" у ноутбука, но мы наложим ограничения:</div>
+						<ul style="margin-top:30px;">
+						<li>Если у субъекта есть CPU, то он является "Компьютером" (имеет такой класс)</li>
+						<li>Если про объект сказано, что он чей-то CPU, то он обязан относиться к классу "Процессор"</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Как работает семантика: свойства</h2>
+						<div style="margin-top:30px;">Сеть не знает, что такое классы и подклассы, но мы введём правила, такие, что если</div>
+						<ul style="margin-top:30px;">
+						<li>Acer+++ имеет класс ноутбук</li>
+						<li>ноутбук - это подкласс компьютеров</li>
+						<li>→ то Acer+++ имеет и класс компьютер тоже</li>
+						</ul>
+						</section>
+					</section>
+				</section>
+
+				<section>
+					<section>						
+						<h2>RDF - Resource Description Framework</h2>
+						<div>Граф принято записывать в виде троек:<br/>
+						(Субъект; Предикат; Объект)</div>
+						<img src="figs/spo.png" style="margin: 30px; padding:20px;">
+						<div>Тройки можно считать простейшими предложениями</div>
+					</section>
+					<section>						
+						<h2>RDF - Resource Description Framework</h2>
+						<ul>
+							<li>Субъект - URI (уникальный идентификатор)</li>
+							<li>Предикат - URI</li>
+							<li>Объект - URI или значение</li>
+						</ul>
+						<img src="figs/spo.png" style="margin: 10px; padding:20px;">
+						<img src="figs/spv.png" style="margin: 10px; padding:20px;">
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Омонимия</h2>
+						<img src="figs/omonims.png" style="padding: 20px;">
+						<div>Нельзя допустить, чтобы два разных понятия склеились в одну вершину</div>
+					</section>
+					<section>
+						<h2>Пространства имён</h2>
+						<img src="figs/namespaced_omonims.png" style="padding: 20px;">
+						<div>Чтобы два сайта не могли сделать вершины с одинаковым именем, все объекты находятся в своих пространствах имён</div>
+					</section>
+					<section>
+						<h2>Префиксы</h2>
+						<img src="figs/prefixed_omonims.png" style="padding: 20px;">
+						<div>Пространства имён обычно очень многословны. Но в рамках сайта вы можете вместо них задать удобные префиксы.</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Turtle</h2>
+						<div>RDF - это только модель данных. Её можно реализовать многими способами. Одним из форматов описания RDF-данных является Turtle.</div>
+					</section>
+					<section>
+						<h2>Turtle</h2>
+						<pre class="mono">
+comp:Thinkpad  rdf:type         comp:notebook ;
+               rdfs:label       "Thinkpad X201" ;
+               compprop:cpu     comp:corei3 ;
+               compprop:ram     6 .
+
+comp:corei3    rdf:type         comp:cpu .
+
+comp:Thinkpad  shop:forsale     _:a ,
+                                _:b .
+_:a            shop:org         shop:AliExpress .
+_:b            shop:org         shop:Avito ;
+               shop:price       300 .
+						</pre>
+					</section>
+				</section>
+				
+
+				<section>
+					<section>
+						<h2>RDF(S) - RDF Schema</h2>
+						<div>Стандартные термины RDF позволяют описывать типы объектов (rdf:type).</div>
+						<div style="margin-top:30px;"> Но иногда хочется описать отношения между типами и свойствами - для этого нам нужен специальный словарь терминов RDFS.</div>
+						<pre class="mono">
+comp:notebook  rdfs:subClassOf  comp:computer .
+comp:cpu       rdfs:domain      comp:computer ;
+               rdfs:range       comp:cpu .
+comp:ram       rdfs:range       xsd:decimal .
+						</pre>
+					</section>
+					<section>
+						<h2>Реификация</h2>
+						<div style="margin-top: 30px;">Иногда утверждение является не фактом, а гипотезой или цитатой. Мы можем отразить и такие случаи:</div>
+						<pre class="mono">
+:Мюллер      :думает        _:statement.
+_:statement  rdf:type       rdf:Statement;
+             rdf:subject    :Штирлиц;
+             rdf:predicate  :имеетГражданство;
+             rdf:object     :Третий Рейх.
+						</pre>
+					</section>
+					<section>
+					<h2>Логический вывод</h2>
+					<div style="margin-top: 30px;">Из утверждений</div>
+					<pre class="mono" style="margin-top: 30px;">
+:Socrates rdf:type        :Human.
+:Human    rdfs:subClassOf :Mortal.
+					</pre>
+					<div style="margin-top: 30px;">автоматически получается, что:</div>
+					<pre class="mono">
+:Socrates rdf:type        :Mortal.
+					</pre>
+					</section>
+					<section>
+						<h2>Онтологии - OWL</h2>
+						<div>OWL - ещё более мощный словарь. Он позволяет описывать множество логических правил.</div>
+						<div>Пример: "ребёнок ребёнка - это внук":</div>
+						<pre class="mono">
+:hasGrandchild owl:propertyChainAxiom ( :hasChild :hasChild ).
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Семантический веб - это толстый стек технологий</h2>
+						<img src="figs/semweb_cake.png" style="padding:10px;">
+					</section>
+					<section>
+						<h2>Семантический веб - это ооочень толстый стек технологий</h2>
+						<img src="figs/too_long_to_say.jpg" style="padding:10px; width: 70%;">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Как это выглядит на практике</h2>
+						<img src="figs/google_kg.png">
+					</section>
+					<section>
+						<h2>Карта семантического веба</h2>
+						<img src="figs/LOD_landscape.png">
+					</section>
+					<section>
+						<h2>Некоторые важные узлы семантического веба</h2>
+						<ul>
+							<li>DBpedia (википедия)</li>
+							<li>Wikidata (ещё одна википедия)</li>
+							<li>Geonames (географический справочник)</li>
+							<li>FOAF (профили в соц.сетях)</li>
+							<li>Freebase (теперь это Google Knowledge Graph)</li>
+							<li>LinkedMDb (IMDB для роботов)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Wikidata</h2>
+						<div>Wikidata - это проект Wikimedia Foundation. Структурированная энциклопедия, с вики-движком.
+					</section>
+					<section>
+						<h2>Wikidata</h2>
+						<img src="figs/Battle_of_Kulikovo_wikidata.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2>SPARQL. Запросы к семантической сети</h2>
+					<ul style="margin-top: 30px;">
+					<li>Зайти на SPARQL-точку. Например:<br/> <a href="https://query.wikidata.org/">https://query.wikidata.org/</a></li>
+					<li>Нужно построить шаблон ответа</li>
+					<li>Вместо неизвестных подставить переменные</li>
+					<li>Запросить значения переменных</li>
+					</ul>
+					</section>
+
+					<section>
+						<h2>Список всех стран</h2>
+						<pre class="mono">
+# Получить ссылку на вершину страны и название страны
+SELECT ?country ?countryLabel WHERE {
+
+  # wdt:P31 -- свойство "instance of" (частный случай понятия)
+  # wd:Q6256 -- вершина "Cтрана"
+  ?country wdt:P31 wd:Q6256.
+
+  # Особая магия, которая вместо номеров вершин делает их названия
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru". }
+}
+						</pre>
+					</section>
+					<section>
+						<h2>Список всех стран</h2>
+						<img src="figs/list_of_countries.png">
+					</section>
+
+					<section>
+					<h2>Шаблон может описывать подграф</h2>
+					<img src="figs/female_mayor.png">
+					</section>
+				</section>
+
+				<section>
+ 					<section>
+						<h2>Прикрепленные изображения</h2>
+						<pre class="mono">
+#defaultView:ImageGrid
+SELECT ?country ?countryLabel ?president ?presidentLabel ?image WHERE {
+  ?country wdt:P31 wd:Q6256.
+  ?country wdt:P6 ?president.
+  ?president wdt:P18 ?image.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+} LIMIT 20
+						</pre>
+					</section>
+					<section>
+						<h2>Прикрепленные изображения</h2>
+						<img src="figs/presidents_w_images.png" style="height: 550px;">
+					</section>
+					<section>
+						<h2>Различные способы отображения результатов</h2>
+						<img src="figs/gdp_query.png">
+						<div>Страны с их ВВП</div>
+					</section>
+					<section>
+						<h2>Страны с их ВВП - Bubble chart</h2>
+						<img src="figs/gdp_result.png" style="height: 550px;">
+					</section>
+
+					<section>
+						<h2>Таймлайн - Нобелевские премии по физике</h2>
+						<img src="figs/physics_nobel_prizes_timeline.png" style="height: 550px;">
+					</section>
+				</section>
+
+<!--
+Авторы наибольшего числа котиков
+SELECT ?author ?authorLabel (COUNT(?picture) AS ?numPictures) WHERE {
+  ?picture wdt:P31 wd:Q3305213.
+  ?picture wdt:P170 ?author.
+  ?picture wdt:P180 wd:Q146.
+  # ?picture wdt:P18 ?image.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+} GROUP BY ?author ?authorLabel
+ORDER BY DESC(?numPictures)
+LIMIT 1000
+ -->
+
+<!-- Что рисуют чаще всего
+SELECT ?klass ?klassLabel (COUNT(?picture) AS ?numPictures) WHERE {
+  ?picture wdt:P31 wd:Q3305213.
+  ?picture wdt:P180 ?klass.
+  # ?picture wdt:P18 ?image.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+} GROUP BY ?klass ?klassLabel
+ORDER BY DESC(?numPictures)
+LIMIT 1000 
+-->
+
+<!-- Самый популярный святой на картинах
+SELECT ?saint ?saintLabel (COUNT(?picture) AS ?numPictures) WHERE {
+  ?picture wdt:P31 wd:Q3305213.
+  ?picture wdt:P180 ?saint.
+  ?saint wdt:P31/wdt:P279* wd:Q43115.
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+} GROUP BY ?saint ?saintLabel
+ORDER BY DESC(?numPictures)
+LIMIT 1000 
+-->
+<!-- 
+Самые богатые коллекции картин
+SELECT ?place ?placeLabel (COUNT(?picture) AS ?numPictures) WHERE {
+  ?picture wdt:P31 wd:Q3305213.
+  ?picture wdt:P195 ?place.
+  # ?picture wdt:P18 ?image.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+} GROUP BY ?place ?placeLabel
+ORDER BY DESC(?numPictures)
+LIMIT 1000 
+-->
+ 			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				margin: 0.02,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transitionSpeed: 'slow',
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

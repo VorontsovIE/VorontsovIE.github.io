@@ -43,7 +43,7 @@ plugins:
 #
 exclude:
   - node_modules/
-  - semweb/
+#  - semweb/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

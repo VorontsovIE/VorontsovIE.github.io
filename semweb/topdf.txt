@@ -1,0 +1,1 @@
+deck2pdf-0.3.0\bin\deck2pdf.bat --profile=revealjs ivavlakul1.html
