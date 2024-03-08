@@ -92,7 +92,8 @@ Here is my [CV](/static/Ilya_Vorontsov_CV.pdf).
 
 Other stuff:
 * My [articles](https://habr.com/ru/users/vorontsovie/posts/) for habrahabr.
-* My telegram-channel about [open science](https://t.me/OpenScienceRu).
+* My general-purpose telegram channel «<a href="https://t.me/schroedinger_jokes">Шутки Шрёдингера</a>» (Schrödinger Jokes).
+* My telegram channel about [open science](https://t.me/OpenScienceRu).
 
 Contacts:
 * telegram: <a href="https://t.me/VorontsovIE">@VorontsovIE</a>
