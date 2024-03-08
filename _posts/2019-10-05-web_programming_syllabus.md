@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Веб-программирование (программа курса)
-permalink: /web_programming/
+permalink: /web-programming-syllabus/
+redirect_from:
+  - /web_programming/
 ---
 ## Аннотация
 Курс посвящен созданию веб-приложений. На курсе участники научатся работать с html/css/javascript, динамически генерировать страницы при помощи языка python и пользоваться базами данных и многое узнают про то, как работает интернет.
