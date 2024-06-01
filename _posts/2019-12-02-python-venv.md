@@ -88,3 +88,10 @@ permalink: /python-venv/
 git add requirements.txt
 git commit -m "Store requirements" -- requirements.txt
 ```
+## Pro-Tips
+
+Прежде чем устанавливать библиотеки, стоит обновить сам установщик. Иначе вы не сможете получить актуальные версии некоторых библиотек или даже вовсе не сможете установить их:
+```
+python3 -m pip install -U pip wheel setuptools
+
+```
