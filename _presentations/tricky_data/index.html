@@ -1,0 +1,331 @@
+---
+title: Как не дать данным себя обмануть
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Как не дать данным себя обмануть</title>
+
+        <link rel="stylesheet" href="../shared/dist/reset.css">
+        <link rel="stylesheet" href="../shared/dist/reveal.css">
+        <link rel="stylesheet" href="../shared/dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../shared/plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Как не дать «дате» себя обмануть.</h2>
+                    <h4>Что мы можем и не можем извлечь из данных.</h4>
+                    <p>Илья Воронцов</p>
+                    <p>Мастерская дата-журналистики Системного Блока, ЛШ-2024, Дубна</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Можно ли данным верить?</h4>
+                        <img src='assets/everybody-lies.jpeg'>
+                    </section>
+
+                    <section>
+                        <h4>Можно ли данным верить?</h4>
+                        <p>Главный вопрос: откуда данные и как собраны</p>
+                    </section>
+
+                    <section>
+                        <h4 class="fragment" data-fragment-index="2">Репрезентативность</h4>
+                        <p>Мы измерили рост участников школы.</p>
+                        <p>Можем ли мы написать материал о том, что мальчики выше девочек?</p>
+                        <p class="fragment" data-fragment-index="1"><em>Только с оговорками</em></p>
+                    </section>
+
+                    <section>
+                        <h4>Репрезентативность</h4>
+                        <ul>
+                            <li>Генеральная совокупность — все люди мира (включая ещё не родившихся)</li>
+                            <li>Выборка — подмножество генеральной совокупности</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Репрезентивность — соответствие характеристик выборки и генеральной совокупности</p>
+                    </section>
+
+                    <section>
+                        <h4>Репрезентативность</h4>
+                        <ul>
+                            <li>В мастерской все люди из России и ближних стран</li>
+                            <li>Нет ли у нас мастерской баскетбола?</li>
+                            <li>А много ли у нас мальчиков/девочек 2 лет?</li>
+                            <li>Бывают очень высокие девочки и очень низкие мальчики</li>
+                            <li>Самая низкая учительница выше самого высокого пацана 5-лет</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Репрезентативность</h4>
+                        <p>Чуть более осторожный тезис: среди российской молодёжи мальчики в среднем выше девочек.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Статистическая гипотеза</h4>
+                        <p>У нас есть репрезентативная выборка, состоящая из 10 мальчиков и 10 девочек.</p>
+                        <p>Увидели, что девочки в среднем на 2 см выше мальчиков.</p>
+                        <p>Можем об этом писать?</p>
+                        <p class="fragment"><hr/>Нет. Это слишком маленькая выборка. Если по случайным причинам будут выбраны другие 20 человек, результат сильно поменяется.</p>
+                    </section>
+
+                    <section>
+                        <h4>Статистическая значимость</h4>
+                        <p>Стат.значимость P-value — степень <u>невероятности</u> того, что эффекта нет.</p>
+                        <p>Чем она меньше, тем более мы уверены в эффекте (мальчики ростом отличаются от девочек).</p>
+                    </section>
+
+                    <section>
+                        <h4>Статистическая значимость</h4>
+                        <p>Чем больше размер выборки, тем меньший эффект мы можем поймать</p>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h4>Размер выборки</h4>
+                        <img src="assets/sample_size.jpg">
+                        <p>Верим ли мы нулям?</p>
+                    </section>
+
+                    <section>
+                        <h4>Размер выборки</h4>
+                        <img src="assets/sample_size_disclosed.jpg">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Методология сбора данных влияет</h4>
+                        <img src="assets/covid_peaks.png">
+                        <p>Выявленные заболевшие COVID-19</p>
+                    </section>
+
+                    <section>
+                        <h4>А хорошо ли, что данные стабильны?</h4>
+                        <img src="assets/covid_plateau.jpg" style="max-width: 70%;">
+                    </section>
+
+                    <section>
+                        <h4>А хорошо ли, что данные стабильны?</h4>
+                        <img src="assets/elections_turnout.jpeg">
+                        <p>Источник: https://t.me/theinsider/26767</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Данные обретают смысл в контексте</h4>
+                        <img src="assets/serbia_is_bad.jpg" style="max-width: 50%;">
+                    </section>
+                    <section>
+                        <h4>Констекст бывает шире, чем кажется</h4>
+                        <img src="assets/oops_italy_is_bad.jpg" style="max-width: 50%;">
+                    </section>
+                    <section>
+                        <h4>Констекст бывает шире, чем кажется</h4>
+                        <img src="assets/oops_czech_is_bad.jpg" style="max-width: 50%;">
+                    </section>
+                    <section>
+                        <h4>Констекст бывает шире, чем кажется</h4>
+                        <img src="assets/oops_polish_is_bad.jpg" style="max-width: 50%;">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Корреляция не влечёт каузацию</h4>
+                        <img src="assets/warm_pirates.jpg"  style="height: 70vh;">
+                    </section>
+
+                    <section>
+                        <h4>Корреляция не влечёт каузацию</h4>
+                        <img src="assets/correlation_causation.jpg" style="max-width: 70%;">
+                    </section>
+                    
+                    <section>
+                        <h4>Корреляция не влечёт каузацию</h4>
+                        <img src="assets/correlation_causation_die.jpg" style="max-width: 70%;">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>In the God given units</h4>
+                        <img src="assets/game_of_go.jpg" style="max-width: 50%;">
+                        <p>Количество возможных партий в Го больше, чем число атомов во Вселенной.</p>
+                    </section>
+
+                    <section>
+                        <h4>Продолжаем сравнивать несравнимое</h4>
+                        <img src="assets/russia_vs_nvidia.jpg" style="max-width: 50%;">
+                        <p>Капитализация NVidia превысила годовой ВВП России.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Нормировка</h4>
+                        <p>Нормировка — способ сопоставить величину с чем-то другим, измерить её «в единицах» другой величины. Например, измерить бюджеты 2015, 2020, 2025 годов в бюджетах 2010 года.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Нормировка</h4>
+                        <p>Когда у вас нет генеральной совокупности, вы можете говорить только про доли (частоты)</p>
+                    </section>
+
+                    <section>
+                        <h4>Нормировка</h4>
+                        <p>Caution: множественный выбор не суммируется к 100%.</p>
+                        <img src="assets/pie_chart_100_plus_percent.jpg" style="height: 58vh;">
+                        <p>КДПВ</p>
+                    </section>
+
+                    <section>
+                        <h4>Как нормировать данные</h4>
+                        <p>Среднее против медианы</p>
+                        <img src="assets/median_mean_eng.jpg">
+                    </section>
+                    
+                    <section>
+                        <h4>Как нормировать данные</h4>
+                        <p>Среднее против медианы</p>
+                        <img src="assets/median_vs_mean.png">
+                    </section>
+
+                    <section>
+                        <h4>Нестабильные статистики</h4>
+                        <p>Среднее — нестабильная по отношению к выбросам величина, поэтому медиана лучше</p>
+                    </section>
+
+                    <section>
+                        <h4>Нестабильные статистики</h4>
+                        <p>А что ещё нестабильно? <span class="fragment">min и max</span></p>
+                        <p class="fragment">Чем заменить? <span class="fragment">5% квантиль и 95% квантиль</span></p>
+                    </section>
+
+                    <section>
+                        <h4>Квантили (aka квартили/перцентили)</h4>
+                        <img src="assets/percentile.jpg">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>На что нормировать?</h4>
+                        <ul>
+                            <li>Разбивку бюджета по категориям?<br/>
+                                <span class="fragment"> На сумму</span></li>
+                            <li>Бюджет по годам?<br/>
+                                <span class="fragment">На бюджет в реперный год.</span><br/>
+                                <span class="fragment">На средний бюджет за прошлые несколько лет.</span><br/>
+                                <span class="fragment">На максимум (чтобы влезло на картинку).</span>
+                            </li>
+                            <li>Температуру?<br/>
+                                <span class="fragment">Не нормировать; рядом провести среднее.</span><br/>
+                                <span class="fragment">(для науки) Перевести в Z-score</span>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h4>В чём мерять — важно</h4>
+                        <img src="assets/gdp_in_usd_rub.jpg">
+                    </section>
+                    <section>
+                        <h4>В чём мерять — важно</h4>
+                        <p>Для разных задач может быть более релевантно измерять в разных валютах</p>
+                        <p>Например, доллары для оценки импорта, рубли — для оценки внутренних цен на местные товары</p>
+                    </section>
+                    <section>
+                        <h4>В чём мерять — важно</h4>
+                        <p>Если вам важно сравнить размеры экономик стран, вы сравниваете ВВП</p>
+                        <p>Если вам важно сравнить производительность труда, вы сравниваете ВВП на душу населения</p>
+                        <p>Если вам важно сравнить уровень благосостояния граждан экономик стран, вы сравниваете ВВП на душу населения по паритету покупательной способности</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Стратификация выборки</h4>
+                        <p>Самая низкая учительница (всё ещё) выше самого высокого пацана 5-лет</p>
+                        <p>Но корректно ли их сравнивать?</p>
+                        <p>Нет: лучше взять их как независимые группы, и сравнивать группы разных возрастов независимо.</p>
+                    </section>
+
+                    <section>
+                        <h4>Парадокс Симпсона</h4>
+                        <img src="assets/Simpsons_paradox_-_animation.gif">
+                    </section>
+                    <section>
+                        <h4>Парадокс Симпсона</h4>
+                        <img src="assets/Simpson_paradox_example.png">
+                    </section>
+                    <section>
+                        <h4>Парадокс Симпсона</h4>
+                        <p>Неоднородность групп может сильно исказить результаты. Они будут больше говорить про размер групп, чем про эффект внутри группы</p>
+                        <p>Нормировку лучше проводить на каждой группе независимо</p>
+                    </section>                    
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Как отобразить степень нашей неуверенности в данных?</h4>
+                        <p>Box-plot с усами</p>
+                        <img src="assets/boxplot_precise.png" style="height:55vh;">
+                        <p>Ус заканчивается на какой-то точке данных, поэтому может оказаться короче 1.5 IQR</p>
+                    </section>
+                    <section>
+                        <h4>Как отобразить степень нашей неуверенности в данных?</h4>
+                        <p>Box-plot с усами</p>
+                        <img src="assets/boxplot.png">
+                    </section>
+                    <section>
+                        <h4>Доверительный интервал</h4>
+                        <img src="assets/confidence_interval.webp">
+                    </section>
+                    <section>
+                        <h4>Caution: ошибки накапливаются</h4>
+                        <p>Если вы, например, делите одну неточную величину на другую, степень ошибки (неточности/неуверенности) может резко возрасти.</p>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="../shared/dist/reveal.js"></script>
+        <script src="../shared/plugin/notes/notes.js"></script>
+        <script src="../shared/plugin/markdown/markdown.js"></script>
+        <script src="../shared/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>

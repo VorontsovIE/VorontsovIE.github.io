@@ -29,28 +29,28 @@
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-SemiBold.ttf");
+    src: url("Neris-SemiBold.otf");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-SemiBoldItalic.ttf");
+    src: url("Neris-SemiBoldItalic.otf");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-LightItalic.ttf");
+    src: url("Neris-LightItalic.otf");
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-Light.ttf");
+    src: url("Neris-Light.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -86,28 +86,28 @@
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-SemiBold.ttf");
+    src: url("Neris-SemiBold.otf");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-SemiBoldItalic.ttf");
+    src: url("Neris-SemiBoldItalic.otf");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-LightItalic.ttf");
+    src: url("Neris-LightItalic.otf");
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neris";
-    src: url("Neris-Light.ttf");
+    src: url("Neris-Light.otf");
     font-weight: normal;
     font-style: normal;
 }

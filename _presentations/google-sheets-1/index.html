@@ -1,0 +1,195 @@
+---
+title: Гугл-таблицы. Очистка данных и первичный анализ
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Гугл-таблицы. Очистка данных и первичный анализ</title>
+
+        <link rel="stylesheet" href="../shared/dist/reset.css">
+        <link rel="stylesheet" href="../shared/dist/reveal.css">
+        <link rel="stylesheet" href="../shared/dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../shared/plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Гугл-таблицы. Очистка данных и первичный анализ</h2>
+                    <p>Илья Воронцов</p>
+                    <p>Мастерская дата-журналистики Системного Блока, ЛШ-2024, Дубна</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Откуда взять данные?</h4>
+                        <ul>
+                            <li>Росстат и подобные ведомства</li>
+                            <li>Результаты опросов — см. google forms</li>
+                            <li>Kaggle</li>
+                            <li>...</li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>С чем будем работать сегодня</h4>
+                        <ul>
+                            <li><a href="https://stuff.geo-history.org/data-journalistics/datasets/">Папка с датасетами</a></li>
+                            <li><a href="https://www.kaggle.com/datasets/saurabhshahane/seoul-bike-sharing-demand-prediction?resource=download&select=SeoulBikeData.csv">Поездки на велосипедах (+описание)</a></li>
+                            <li><a href="https://tochno.st/datasets/air_cities">Состояние загрязнения атмосферы в городах России с 2007 года</a></li>
+                            <li><a href="https://rosstat.gov.ru/folder/210/document/13229">Пример датасета про транспорт на РосСтате</a></li>
+                            <li><a href="https://dtp-stat.ru/">Данные про ДТП</a></li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <p>Программы</p>
+                        <ul>
+                            <li>Google sheets</li>
+                            <li>MS Excel</li>
+                            <li>Libre Office — Calc</li>
+                            <li>Open Office</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Форматы</p>
+                        <ul>
+                            <li>xls, xlsx, ods</li>
+                            <li>csv, tsv</li>
+                            <li><s>json</s></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Как загрузить csv</h4>
+                        <ul>
+                            <li>Кодировка: UTF-8 (unicode) или CP-1251</li>
+                            <li>Локаль в зависимости от того, у вас десятичная точка (US) или запятая (Ru)</li>
+                            <li>Разделитель ячеек: запятая (csv = comma separated values) или табуляция (tsv)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Предобработка — за чем проследить</h4>
+                        <ul>
+                            <li>Никаких склеенных ячеек</li>
+                            <li>Колонки должны быть называны. Заголовки в одну строку</li>
+                            <li>Пробелы в числах — удалить (иначе это не числа, а текст)</li>
+                            <li>Проверить типы данных! (угадайте, какой тип данных у гена OCT4)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Чистка данных</h4>
+                        <ul>
+                            <li>Исправление опечаток</li>
+                            <li>Укрупнение категорий</li>
+                            <li>Заполнение пропусков</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Чистка данных</h4>
+                        <p>Лучше дописывать новый столбец, чем исправлять существующий</p>
+                    </section>
+
+                </section>
+                
+                <section>
+                    <section>
+                        <h4>Формулы</h4>
+                        <ul>
+                            <li>формула стартует со знака `=`</li>
+                            <li>в формуле можно сослаться на ячейку или целый интервал</li>
+                            <li>также в формуле можно использовать функции</li>
+                            <li>при копировании ячейки формула меняется, чтобы закрепить столбец/строку перед его номером ставится `$`</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Hotkeys, полезные при использовании формул</h4>
+                        <ul>
+                            <li>Ctrl+Arrow — переместиться в конец/начало столбца/строки</li>
+                            <li>Ctrl+Shift+Arrow — переместиться, выделяя заметаемое</li>
+                            <li>Ctrl+Shift+V — вставить без форматирования</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Функции</h4>
+                        <ul>
+                            <li>SUM, COUNT, AVG, MAX, ...</li>
+                            <li>IF, COUNTIF, ...</li>
+                            <li>EXACT, TRUNC, DATEDIF, CONTAINSSTRING, ...</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Первый взгляд на данные</h4>
+                        <ul>
+                            <li>сортировка<br/>
+                                <i>не забудьте добавить колонку ID, чтобы позднее восстановить порядок</i>
+                            </li>
+                            <li>фильтры</li>
+                            <li>условное форматирование</li>
+                            <li>закрепление строк/столбцов</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Поиск аномалий</h4>
+                        <ul>
+                            <li>отсортировать значения</li>
+                            <li>для числовых данных построить линейный график</li>
+                            <li>для категориальных данных — построить гистограмму/сводную таблицу</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Базовые типы графиков</h4>
+                        <ul>
+                            <li>bar chart</li>
+                            <li>процентная разбивка</li>
+                            <li>линейные графики</li>
+                            <li>гистограммы / KDE-plot / box-plot</li>
+                            <li>диаграммы рассеяния (scatterplot)</li>
+                        </ul>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="../shared/dist/reveal.js"></script>
+        <script src="../shared/plugin/notes/notes.js"></script>
+        <script src="../shared/plugin/markdown/markdown.js"></script>
+        <script src="../shared/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>

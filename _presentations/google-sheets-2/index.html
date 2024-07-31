@@ -1,0 +1,240 @@
+---
+title: Гугл-таблицы. Сводные таблицы и SQL
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Гугл-таблицы. Сводные таблицы и SQL</title>
+
+        <link rel="stylesheet" href="../shared/dist/reset.css">
+        <link rel="stylesheet" href="../shared/dist/reveal.css">
+        <link rel="stylesheet" href="../shared/dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../shared/plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Гугл-таблицы. Сводные таблицы и SQL</h2>
+                    <p>Илья Воронцов</p>
+                    <p>Мастерская дата-журналистики Системного Блока, ЛШ-2024, Дубна</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Сводные таблицы</h4>
+                    </section>
+     
+                    <section>
+                        <h4>OLAP-куб</h4>
+                        <img src="assets/olap.png" style="height: 75vh">
+                        <p class="fragment">Но мы умеем смотреть только на плоское</p>
+                    </section>
+
+                    <section>
+                        <h4>OLAP-куб</h4>
+                            <ul>
+                                <li>Roll up: объединить показатели в категории разрезов уровнем выше (город => область).</li>
+                                <li>Drill Down: разбить обобщённые категории на категории уровнем ниже (область => город).</li>
+                                <li>Slice / Dice: зафиксировать значение (одно/несколько) по одной из осей</li>
+                                <li>Pivot: поменять оси табличного представления.</li>
+                            </ul>
+                    </section>
+
+                    <section>
+                        <h4>OLAP-куб</h4>
+                        <p>Slice / Dice: зафиксировать значение по одной из осей</p>
+                        <img src="assets/olap_slice.png">
+                    </section>
+
+                    <section>
+                        <h4>OLAP-куб</h4>
+                        <p>Slice / Dice: зафиксировать значение по одной из осей</p>
+                        <img src="assets/olap_dice.png">
+                    </section>
+
+                    <section>
+                        <h4>OLAP-куб</h4>
+                        <ul>
+                            <li>Roll up: объединить показатели в категории разрезов уровнем выше (город => область).</li>
+                            <li>Drill Down: разбить обобщённые категории на категории уровнем ниже (область => город).</li>
+                        </ul>
+                        <img src="assets/olap_drill_down_roll_up.png">
+                    </section>
+
+                    <section>
+                        <h4>OLAP-куб</h4>
+                        <p>Pivot: поменять оси табличного представления.</p>
+                        <img src="assets/olap_pivot.png">
+                    </section>
+
+                    <section>
+                        <h4>Цепочки преобразований — другой способ думать о...</h4>
+                        <ul>
+                            <li>select — отфильтровать объекты</li>
+                            <li>map — преобразовать объекты во что-то</li>
+                            <li>reduce — агрегировать объекты в единое значение</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Запросы к данным — SQL</h4>
+<pre><code>
+= QUERY(A1:E100; "SELECT A, B WHERE C > 100 AND D = 42")
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Запросы к данным — SQL</h4>
+<pre><code>
+SELECT колонки [PIVOT колонка] WHERE условие [GROUP BY колонки] [ORDER BY колонки ASC/DESC] [LIMIT количество [OFFSET сдвиг]] 
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Группировка — GROUP BY</h4>
+<pre><code>
+select dept, max(salary) group by dept
+</code></pre>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>dept</th><th>max-salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Eng</td><td>800</td></tr>
+                                <tr><td>Marketing</td><td>600</td></tr>
+                                <tr><td>Sales</td><td>1234</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h4>«Вращение» — PIVOT</h4>
+<pre><code>
+select sum(salary), max(lunchTime) pivot dept
+</code></pre>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Eng sum-salary</th><th>Marketing sum-salary</th><th>Sales sum-salary</th>
+                                    <th>Eng max-lunchTime</th><th>Marketing max-lunchTime</th><th>Sales max-lunchTime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2100</td><td>800</td><td>750</td><td>13:00:00</td><td>13:00:00</td><td>12:00:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+
+                    <section>
+<pre><code>
+select sum(salary), max(lunchTime) pivot dept
+</code></pre>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Eng sum-salary</th><th>Marketing sum-salary</th><th>Sales sum-salary</th>
+                                    <th>Eng max-lunchTime</th><th>Marketing max-lunchTime</th><th>Sales max-lunchTime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2100</td><td>800</td><td>750</td><td>13:00:00</td><td>13:00:00</td><td>12:00:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h4>Агрегирующие функции</h4>
+                        <ul>
+                            <li>COUNT</li>
+                            <li>SUM / AVG</li>
+                            <li>MAX / MIN</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Склеивание таблиц по идентификатору (VLOOKUP / ВПР)</h4>
+<pre><code>
+= VLOOKUP(искомое значение;
+          таблица;
+          номер столбца;
+          интервальный просмотр)
+</code></pre>
+                        <p>идентификатор — самая левая колонка!</p>
+                        <p>интервальный просмотр зафиксировать в 0</p>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h4>Не Excel-ем единым</h4>
+                    </section>
+
+                    <section>
+                        <h4>Не Excel-ем единым</h4>
+                        <p>csv/tsv — текстовый файл. Значит можно редактировать в текстовом редакторе</p>
+                        <p class="fragment">Регулярные выражения</p>
+                        <p class="fragment">OpenRefine</p>
+                        <p class="fragment">diff</p>
+                        <p class="fragment">Warning: Будьте осторожны с данными, содержащими разделители (табуляции, новые строки, пробелы, запятые)</p>
+                    </section>
+
+                    <section>
+                        <h4>Не Excel-ем единым</h4>
+                        <p>Данные могут прийти в других форматах</p>
+                        <div class="fragment">
+                            <ul>
+                                <li>Данные JSON можно извлечь при помощи jq</li>
+                                <li>XML/HTML — любой XML-парсер. Язык CSS-запросов / XPath</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+<!-- 
+                <section>
+                    <section>
+                        <h4>Объединение таблиц</h4>
+                        VLOOKUP
+                    </section>
+                </section> -->
+            </div>
+        </div>
+
+        <script src="../shared/dist/reveal.js"></script>
+        <script src="../shared/plugin/notes/notes.js"></script>
+        <script src="../shared/plugin/markdown/markdown.js"></script>
+        <script src="../shared/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>
