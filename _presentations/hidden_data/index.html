@@ -1,0 +1,408 @@
+---
+title: Данные, которые мы не замечаем
+---
+
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Данные, которые мы не замечаем</title>
+
+		<link rel="stylesheet" href="../shared/css/reveal.css">
+		<link rel="stylesheet" href="../shared/css/theme/serif.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../shared/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../shared/css/print/pdf.css' : '../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+		.reveal section img { max-height: 520px; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Анализ сообществ по цифровым следам. Данные, которые мы не замечаем.</h2>
+					<h3>А также кейс sci-hub.</h3>
+					<div style="float:right; padding-top: 80px;">Илья Воронцов</div>
+				</section>
+
+				<section>
+					<h3>Сколько школ меняет средний школьник?</h3>
+					<p class="fragment" style="padding-bottom:40px;">Откуда взять данные?</p>
+					<ul>
+						<li class="fragment">Собрать для своей задачи</li>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">Пример: провести опрос</div>
+						
+						<li class="fragment">Кто-то уже собрал их для вашей задачи</li>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">Пример: PISA/TIMSS</div>
+						
+						<li class="fragment">Кто-то собрал их с другой целью</li>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">Пример: число кластеров (=классов) друзей школьника в соцсети</div>
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="padding-bottom:40px;">Почему у вас нет данных?</h3>
+					<ul>
+						<li>Провести опрос долго и дорого</li>
+						<li>Респонденты загадочно молчат</li>
+						<li>Все врут</li>
+						<li>Измеряемая характеристика слишком субъективна</li>
+						<li>Никто не заинтересовался тем же, чем вы</li>
+					</ul>
+				</section>
+					
+				<section>
+					<section>
+						<h3 style="padding-bottom:40px;">Прокси-характеристики</h3>
+						<div>Как узнать возраст человека?</div>
+						<ul>
+							<li class="fragment">спросить у знакомых</li>
+							<li class="fragment">вычислить из года окончания института</li>
+							<li class="fragment">угадать по фотографии</li>
+							<li class="fragment">посчитать средний возраст друзей</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3 style="padding-bottom:40px;">Прокси-характеристики</h3>
+						<div>Как узнать число образованных людей?</div>
+						<ul>
+							<li class="fragment">опросить школы, ВУЗы и колледжи</li>
+							<li class="fragment">опросить работодателей</li>
+							<li class="fragment">провести всеобщую перепись населения</li>
+							<li class="fragment">узнать у телефонного оператора, сколько абонентов пишет смс с грубыми ошибками</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3 style="padding-bottom:40px;">Прокси-характеристики</h3>
+						<div>Как отфильтровать только самые важные исторические события?</div>
+						<ul>
+							<li class="fragment">опросить сотню историков</li>
+							<li class="fragment">прочитать основные учебники</li>
+							<li class="fragment">Для каждого события найти статью в википедии, посчитать количество прочтений за месяц, длину статьи и число её переводов на другие языки</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- ======================================================================================-->
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Ошибки важнее, чем содержание</h3>
+						<ul>
+							<li class="fragment">
+								Какой из двух вариантов рукописи появился раньше?
+								<p class="fragment">Копия наследует ошибки старой версии и вносит новые
+									<br/><span class="fragment" style="font-size: 0.8em;">(Биологи так изучают эволюцию)</span>
+								</p>
+							</li>
+							<li class="fragment">Кражу базы данных можно доказать по ошибкам</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3 style="padding-bottom: 40px;">Оцифровать архив документов недостаточно. Оригиналы важны</h3>
+						<div>Никогда не знаешь, какую характеристику надо запомнить</div>
+						<ul>
+							<li>Содержание</li>
+							<li>Расположение текста на странице</li>
+							<li>Шрифт</li>
+							<li>Цвет чернил</li>
+							<li>Типа бумаги</li>
+							<li>В какой папке лежал документ</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3 style="padding-bottom: 40px;">Ошибки важнее, чем содержание</h3>
+						<div style="display: inline-block; width:45%;">
+							<img src="img/monkey.jpg" width="100%"/>
+							<div>Неповторимый оригинал</div>
+						</div>
+						<div style="display: inline-block; width:45%;">
+							<img src="img/human.jpg" width="100%"/>
+							<div>Жалкая копия</div>
+						</div>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Как страшно жить!</h2>
+				</section>
+
+				<section>
+					<h3 style="padding-bottom: 40px;">Бегая вы помогаете потенциальному противнику. Strava</h3>
+					<img src="img/strava.jpg" style="max-height: 55vh;"/>
+					<p>Да, это военная база в пустыне</p>
+				</section>
+
+				<section>
+					<h3 style="padding-bottom: 40px;">Hummingbird Clock</h3>
+					<ul>
+						<li class="fragment">Частота тока в электросети одинаковая по всей UK</li>
+						<li class="fragment">Случайно колеблется от 49 до 51 Hz</li>
+						<li class="fragment">На аудиозаписях шум слышен проводов</li>
+						<li class="fragment">Вот уже много лет хранится график частоты в разные моменты времени</li>
+						<li class="fragment">Итого: по аудиозаписи можно узнать, когда она сделана!</li>
+					</ul>
+					<a href="http://www.hummingbirdclock.info/about/how-does-it-work" style="text-align:right;">Тыц сюда</a>
+				</section>
+
+
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Timing attack. Взламываем пароль</h3>
+						<p>Пароль <tt>qwerty</tt></p>
+						<table>
+							<thead><tr><th>попытка</th><th>время ответа сервера</th></tr></thead>
+							<tbody><tr><td>a</td><td>100±30 мс</td></tr></tbody>
+							<tbody><tr><td>b</td><td>100±30 мс</td></tr></tbody>
+							<tbody><tr><td>...</td><td>100±30 мс</td></tr></tbody>
+							<tbody><tr><td><b>q</b></td><td><b>115±30 мс</b></td></tr></tbody>
+							<tbody><tr><td>r</td><td>100±30 мс</td></tr></tbody>
+							<tbody><tr><td>...</td><td>100±30 мс</td></tr></tbody>
+						</table>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Timing attack. Взламываем пароль</h3>
+						<p>Пароль <tt>qwerty</tt></p>
+						<table>
+							<thead><tr><th>попытка</th><th>время ответа сервера</th></tr></thead>
+							<tbody><tr><td>qa</td><td>115±30 мс</td></tr></tbody>
+							<tbody><tr><td>qb</td><td>115±30 мс</td></tr></tbody>
+							<tbody><tr><td>...</td><td>115±30 мс</td></tr></tbody>
+							<tbody><tr><td><b>qw</b></td><td><b>130±30 мс</b></td></tr></tbody>
+							<tbody><tr><td>qx</td><td>115±30 мс</td></tr></tbody>
+							<tbody><tr><td>...</td><td>115±30 мс</td></tr></tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Стилометрия: за псевдонимом не спрятаться</h3>
+						<img src="img/rowling.jpg" style="max-height: 55vh;" />
+						<p>На самом деле это Джоан Роулинг</p>
+						<!-- <div>По употреблению слов можно угадать, кто скрывается за псевдонимом</div> -->
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Стилометрия</h3>
+						<div>Who is Mr. Satoshi Nakamoto?</div>
+						<img src="img/bitcoin.jpg" />
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Стилометрия</h3>
+						<div>Шекспир - один человек или несколько?</div>
+						<img src="img/shakespear.jpg" />						
+					</section>
+				</section>
+				
+<!-- 				<section>
+					<img src="img/nobody_knows_you_are_a_dog_original.jpg" />
+				</section>
+ -->
+ 				<section>
+					<img src="img/nobody_knows_you_are_a_dog_modern.jpg" />
+					<div class="fragment">И это даже не big data.</div>
+				</section>
+
+				<!-- ======================================================================================-->
+				<section>
+					<h2>Как изучать общество/сообщество</h2>
+				</section>
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Google street view</h3>
+						<img src="img/google_street_view.jpg" />
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Google street view</h3>
+						<div style="display: inline-block; width:45%; vertical-align: top;">
+							<div>Седан</div>
+							<img src="img/lada-sedan-baklazhan.jpg" width="100%" style="margin: 60px 0;"/>
+							<div style:"vertical-align:bottom">выбор демократов</div>
+						</div>
+						<div style="display: inline-block; width:45%; vertical-align: top;">
+							<div>Пикап</div>
+							<img src="img/pickup.jpg" width="100%"/>
+							<div style:"vertical-align:bottom">вы на территории республиканцев</div>
+						</div>
+						<!-- <div><a href="https://www.cbc.ca/news/technology/google-street-view-data-vote-1.4002799">подробности</a></div> -->
+						<!-- <div><a href="http://ai.stanford.edu/~tgebru/papers/pnas.pdf">подробности</a></div> -->
+						<!-- <div><a href="https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/">подробности</a></div> -->
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Google N-gram viewer</h3>
+						<img src="img/genetics_us.png" />
+						<p>Genetics and cybernetics в англоязычном мире</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Google N-gram viewer</h3>
+						<img src="img/genetics_ru.png" />
+						<p>Гонения на генетику в СССР</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Второе пришествие кокаина:<br/>наркостатистика в Google Books</h3>
+						<img src="img/narcotics_in_books.jpg" />
+						<div><a href="https://vk.com/@sysblok-vtoroe-prishestvie-kokaina">https://vk.com/@sysblok-vtoroe-prishestvie-kokaina</a></div>
+					</section>
+				</section>
+
+				<!-- ======================================================================================-->
+
+				<section>
+					<h3 style="padding-bottom: 40px;">Анализ логов веб-сервисов</h3>
+					<ul>
+						<li class="fragment">Самые популярные запросы</li>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">что снится людям в Москве?</div>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">зимой или летом делают ремонт?</div>
+
+						<li class="fragment">Самые посещаемые места</li>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">где собираются футбольные болельщики</div>
+						<div class="fragment" style="text-align:right;font-size: 0.65em;">что фоткают на Арбате</div>
+
+						<li class="fragment">And much, MUCH more...</li>
+						<p class="fragment">... а вот и пример ↓</p>
+
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="padding-bottom: 40px;">Анализ логов sci-hub. Где и когда качают научные статьи</h3>
+					<table style="font-size: 0.6em;">
+						<thead>
+							<tr><th>timestamp</th><th>doi</th><th>ip</th><th>user</th><th>country</th><th>city</th><th>lat</th><th>lng</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>2017.01.01<br/>00:00:28</td><td>10.1016/j.ajodo.2004.08.024</td><td>46</td><td>48</td><td>Egypt</td><td>N/A</td><td>30.0527614</td><td>31.3641695</td></tr>
+							<tr><td>2017.02.02<br/>21:13:37</td><td>10.1109/4.818917</td><td>1855983</td><td>2715037</td><td>Singapore</td><td>Singapore</td><td>N/A</td><td>N/A</td></tr>
+							<tr><td>2017.04.16<br/>20:25:05</td><td>10.1016/j.jsg.2005.01.014</td><td>1752366</td><td>105597</td><td>Poland</td><td>Warszawa</td><td>52.2296756</td><td>21.0122287</td></tr>	
+						</tbody>
+					</table>
+					<p>Подробности в статье <a href="https://habr.com/ru/articles/359342/">«Понедельник начинается в субботу, или что можно узнать о жизни в другой стране из логов sci-hub»</a></p>
+				</section>
+				
+				<section>
+					<h3 style="padding-bottom: 40px;">Видишь координаты - рисуй карту!</h3>
+					<img src="img/scihub/choropleth_num_downloads.png" />
+				</section>
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Недельный график работы.</h3>
+						<img src="img/scihub/weekplot_Moscow.png" style="max-height: 65vh;"/>
+						<p>Видим работу на выходных</p>
+					</section>
+					
+					<section>
+						<h3 style="padding-bottom: 40px;">График работы: Россия vs Франция</h3>
+						<img src="img/scihub/dayplot_Russia-France.png" style="max-height: 65vh;" />
+						<p>Во Франции дружно ходят на обед</p>
+					</section>
+					
+					<section>
+						<h3 style="padding-bottom: 40px;">График работы: Китай</h3>
+						<img src="img/scihub/dayplot_China-cities.png" style="max-height: 65vh;" />
+						<p>В Китае бывает то ли дневной сон, то ли ужин на работе</p>
+					</section>
+
+					<section>
+						<h3 style="padding-bottom: 40px;">График работы: Россия vs Колумбия</h3>
+						<img src="img/scihub/weekplot_Russia-Colombia.png" style="max-height: 65vh;" />
+						<p>В Колумбии работают вечерами</p>
+					</section>
+
+					<section>
+						<h3 style="padding-bottom: 40px;">Недели бывают разные: Россия vs Куба</h3>
+						<img src="img/scihub/weekplot_Russia-Cuba.png" style="max-height: 65vh;" />
+						<p>На Кубе не работают в выходные</p>
+					</section>
+					
+					<section>
+						<h3 style="padding-bottom: 40px;">Недели бывают разные: Россия vs Израиль</h3>
+						<img src="img/scihub/weekplot_Russia-Israel.png" style="max-height: 55vh;" />
+						<p>А в Израиле выходные сдвинуты</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Иран и Ирак</h3>
+						<img src="img/scihub/weekplot_Iran-Iraq.png" style="max-height: 65vh;" />
+						<p>Кондиционер на работе или дома</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Иран - всматриваемся глубже</h3>
+						<img src="img/scihub/heatmap_Iran_daytime.png" style="max-height: 60vh;" />
+						<p>На голодный желудок не работается.<br/>Поэтому в Рамадан работа идёт лучше ночью (после еды)</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Детально про Китай</h3>
+						<img src="img/scihub/heatmap_China_weektime.png" style="max-height: 60vh;" />
+						<p>Можно изучать данные с разной степенью детализации.<br/>Каждый день года</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Детально про Россию</h3>
+						<img src="img/scihub/heatmap_Russia_daytime.png" style="max-height: 60vh;" />
+						<p>Можно изучать данные с разной степенью детализации.<br/>Каждая неделя года</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Детально про Францию</h3>
+						<img src="img/scihub/heatmap_France_daytime_unnormed.png" />
+					</section>
+				</section>
+
+				
+				<section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Нашествия ботов</h3>
+						<img src="img/scihub/heatmap_SouthKorea_daytime_unnormed.png" />
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Нашествия ботов</h3>
+						<img src="img/scihub/weekplot_Russia-US.png" style="max-height: 65vh;" />
+						<p>Боты не ложатся спать</p>
+					</section>
+					<section>
+						<h3 style="padding-bottom: 40px;">Нашествия ботов (после коррекции)</h3>
+						<img src="img/scihub/weekplot_Russia-US-pulldown.png" />
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../shared/lib/js/head.min.js"></script>
+		<script src="../shared/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../shared/plugin/markdown/marked.js' },
+					{ src: '../shared/plugin/markdown/markdown.js' },
+					{ src: '../shared/plugin/notes/notes.js', async: true },
+					{ src: '../shared/plugin/highlight/highlight-9.11.0.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+				history: true,
+			});
+		</script>
+	</body>
+</html>
