@@ -67,11 +67,14 @@ Some of my side projects:
 * [Interactive historical atlas](http://geo-history.org) based on parsing wikipedia, created by school students under my (and my colleague) supervision.
 
 Teaching activities:
+* Taught CS classes and led R&D projects for 7–11 grade students in public schools for talented pupils Intellectual and Silaeder.
+* (co-)Author of course “[Algorithms and Data Structures](https://practicum.yandex.ru/algorithms/)” in Yandex.Practicum
+* Author of modules on Javascript, and on Introduction to IT for courses on [Frontend Development](https://go.redav.online/af8b98725a34ce20?erid=LdtCKXSTq&m=1) and Python at Eduson.
+* Co-author of a course [ML for Biomedical Sciences](https://edu.openbio.ru/mlforbiomed?utm_campaign=speakers&utm_term=ilya) at OpenBio.
+* Co-author of a Python course in [Yandex.Lyceum](https://yandexlyceum.ru).
 * I'm one of the teachers and organisers of [**Slon**](https://vk.com/slon_ipm) summer school of applied programming.
 * Currated several projects in bioinformatics at the [School of Molecular and Theoretical Biology](https://molbioschool.org/en/).
-* Wrote part of training material for Python course in [Yandex.Lyceum](https://yandexlyceum.ru).
 * Curate projects at [LearnPython](https://learn.python.ru) courses.
-* Teach 10-th and 11-th grade students in Intellectual school.
 
 Technologies:
 * Languages I speak: Russian (native), English (good enough to speak and write).
